@@ -1,14 +1,10 @@
 ---
-title: API Reference
+title: Stroll Api
 
 language_tabs:
   - shell
-  - ruby
-  - python
-  - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -19,171 +15,621 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the Stroll Health API!
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
 
 # Authentication
 
 > To authorize, use this code:
 
-```ruby
+```shell
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
 ```
 
-```python
-import kittn
 
-api = kittn.authorize('meowmeowmeow')
-```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
 
 > Make sure to replace `meowmeowmeow` with your API key.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+Stroll uses OAuth2 to allow access to the API.
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+Stroll expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
 `Authorization: meowmeowmeow`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>meowmeowmeow</code> with a user's authorization token.
 </aside>
 
-# Kittens
+# User Microservice
 
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
+## Get Current User
 
 ```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
+curl --include \
+     --header "Authorization: Bearer meowmeowmeow" \
+  'http://localhost:9008/user/current'
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+  "meta": {
+    "href": null
+  },
+  "userId": 24,
+  "tenantUUID": null,
+  "firstName": "James",
+  "lastName": "Smith",
+  "email": "JamesSmith@strollhealth.com",
+  "roles": [
+    "Physician"
+  ],
+  "facilities": [
+    {
+      "meta": {
+        "href": null
+      },
+      "site": {
+        "id": 3,
+        "tenantUUID": "sh",
+        "name": "some_facility",
+        "type": "Facility",
+        "address": {
+          "streetNumber": "551",
+          "streetPreDir": null,
+          "streetName": "Casey Drive",
+          "streetType": null,
+          "streetPostDir": null,
+          "city": "Berkeley",
+          "state": null,
+          "zip": "94032",
+          "zip4": null,
+          "county": "",
+          "country": "US",
+          "lat": 123,
+          "lng": 456
+        },
+        "fax": null,
+        "phone": null,
+        "lastUpdateDate": 1436552466000,
+        "createDate": 1430720466000,
+        "new": false
+      }
+    }
+  ],
+  "practices": [
+    {
+      "meta": {
+        "href": null
+      },
+      "site": {
+        "id": 4,
+        "tenantUUID": "sh",
+        "name": "some_practice",
+        "type": "Practice",
+        "address": {
+          "streetNumber": "551",
+          "streetPreDir": null,
+          "streetName": "Casey Drive",
+          "streetType": null,
+          "streetPostDir": null,
+          "city": "Berkeley",
+          "state": null,
+          "zip": "94932",
+          "zip4": null,
+          "county": null,
+          "country": "US",
+          "lat": 123,
+          "lng": 456
+        },
+        "fax": null,
+        "phone": null,
+        "lastUpdateDate": 1438577683000,
+        "createDate": 1430720641000,
+        "new": false
+      }
+    }
+  ],
+  "profile": {
+    "meta": {
+      "href": null
+    },
+    "hasSignuature": false,
+    "npi": "N/A"
+  }
 }
 ```
 
-This endpoint retrieves a specific kitten.
+This endpoint retrieves information about the current user.
+
+### HTTP Request
+
+`GET http://localhost:9008/user/current`
+
+<aside class="success">
+Remember — a happy user is an authenticated user!
+</aside>
+
+## Get Current User's Sites
+
+```shell
+curl --include \
+     --header "Authorization: Bearer meowmeowmeow" \
+  'http://localhost:9008/user/sites'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "meta": {
+    "href": null
+  },
+  "facilities": [
+    {
+      "meta": {
+        "href": null
+      },
+      "site": {
+        "id": 3,
+        "tenantUUID": "sh",
+        "name": "some_facility",
+        "type": "Facility",
+        "address": {
+          "streetNumber": "551",
+          "streetPreDir": null,
+          "streetName": "Casey Drive",
+          "streetType": null,
+          "streetPostDir": null,
+          "city": "Berkeley",
+          "state": null,
+          "zip": "94032",
+          "zip4": null,
+          "county": "",
+          "country": "US",
+          "lat": 123,
+          "lng": 456
+        },
+        "fax": null,
+        "phone": null,
+        "lastUpdateDate": 1436552466000,
+        "createDate": 1430720466000,
+        "new": false
+      },
+      "users": [
+        {
+          "meta": {
+            "href": null
+          },
+          "userId": 24,
+          "tenantUUID": null,
+          "firstName": "James",
+          "lastName": "Smith",
+          "email": "JamesSmith@strollhealth.com",
+          "roles": [
+            "Physician"
+          ],
+          "facilities": [
+            {
+              "meta": {
+                "href": null
+              },
+              "site": {
+                "id": 3,
+                "tenantUUID": "sh",
+                "name": "some_facility",
+                "type": "Facility",
+                "address": {
+                  "streetNumber": "551",
+                  "streetPreDir": null,
+                  "streetName": "Casey Drive",
+                  "streetType": null,
+                  "streetPostDir": null,
+                  "city": "Berkeley",
+                  "state": null,
+                  "zip": "94032",
+                  "zip4": null,
+                  "county": "",
+                  "country": "US",
+                  "lat": 123,
+                  "lng": 456
+                },
+                "fax": null,
+                "phone": null,
+                "lastUpdateDate": 1436552466000,
+                "createDate": 1430720466000,
+                "new": false
+              }
+            }
+          ],
+          "practices": [
+            {
+              "meta": {
+                "href": null
+              },
+              "site": {
+                "id": 4,
+                "tenantUUID": "sh",
+                "name": "some_practice",
+                "type": "Practice",
+                "address": {
+                  "streetNumber": "551",
+                  "streetPreDir": null,
+                  "streetName": "Casey Drive",
+                  "streetType": null,
+                  "streetPostDir": null,
+                  "city": "Berkeley",
+                  "state": null,
+                  "zip": "94932",
+                  "zip4": null,
+                  "county": null,
+                  "country": "US",
+                  "lat": 123,
+                  "lng": 456
+                },
+                "fax": null,
+                "phone": null,
+                "lastUpdateDate": 1438577683000,
+                "createDate": 1430720641000,
+                "new": false
+              }
+            }
+          ],
+          "profile": {
+            "meta": {
+              "href": null
+            },
+            "hasSignuature": false,
+            "npi": "N/A"
+          }
+        }
+      ]
+    }
+  ],
+  "practices": [
+    {
+      "meta": {
+        "href": null
+      },
+      "site": {
+        "id": 4,
+        "tenantUUID": "sh",
+        "name": "some_practice",
+        "type": "Practice",
+        "address": {
+          "streetNumber": "551",
+          "streetPreDir": null,
+          "streetName": "Casey Drive",
+          "streetType": null,
+          "streetPostDir": null,
+          "city": "Berkeley",
+          "state": null,
+          "zip": "94932",
+          "zip4": null,
+          "county": null,
+          "country": "US",
+          "lat": 123,
+          "lng": 456
+        },
+        "fax": null,
+        "phone": null,
+        "lastUpdateDate": 1438577683000,
+        "createDate": 1430720641000,
+        "new": false
+      },
+      "users": [
+        {
+          "meta": {
+            "href": null
+          },
+          "userId": 24,
+          "tenantUUID": null,
+          "firstName": "James",
+          "lastName": "Smith",
+          "email": "JamesSmith@strollhealth.com",
+          "roles": [
+            "Physician"
+          ],
+          "facilities": [
+            {
+              "meta": {
+                "href": null
+              },
+              "site": {
+                "id": 3,
+                "tenantUUID": "sh",
+                "name": "some_facility",
+                "type": "Facility",
+                "address": {
+                  "streetNumber": "551",
+                  "streetPreDir": null,
+                  "streetName": "Casey Drive",
+                  "streetType": null,
+                  "streetPostDir": null,
+                  "city": "Berkeley",
+                  "state": null,
+                  "zip": "94032",
+                  "zip4": null,
+                  "county": "",
+                  "country": "US",
+                  "lat": 123,
+                  "lng": 456
+                },
+                "fax": null,
+                "phone": null,
+                "lastUpdateDate": 1436552466000,
+                "createDate": 1430720466000,
+                "new": false
+              }
+            }
+          ],
+          "practices": [
+            {
+              "meta": {
+                "href": null
+              },
+              "site": {
+                "id": 4,
+                "tenantUUID": "sh",
+                "name": "some_practice",
+                "type": "Practice",
+                "address": {
+                  "streetNumber": "551",
+                  "streetPreDir": null,
+                  "streetName": "Casey Drive",
+                  "streetType": null,
+                  "streetPostDir": null,
+                  "city": "Berkeley",
+                  "state": null,
+                  "zip": "94932",
+                  "zip4": null,
+                  "county": null,
+                  "country": "US",
+                  "lat": 123,
+                  "lng": 456
+                },
+                "fax": null,
+                "phone": null,
+                "lastUpdateDate": 1438577683000,
+                "createDate": 1430720641000,
+                "new": false
+              }
+            }
+          ],
+          "profile": {
+            "meta": {
+              "href": null
+            },
+            "hasSignuature": false,
+            "npi": "N/A"
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+This endpoint retrieves all sites belonging to the current user.
 
 <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`GET http://localhost:9008/user/sites`
 
-### URL Parameters
+## Get Tenants by Email
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
+```shell
+curl --include \
+     --header "Authorization: Bearer meowmeowmeow" \
+  'http://localhost:9008/user/tenants?email=jamessmith@strollhealth.com'
+```
 
+> The above command returns JSON structured like this:
+
+```json
+[
+  "sh"
+]
+```
+
+This endpoint retrieves tenants corresponding to an email.
+
+
+### HTTP Request
+
+`GET http://localhost:9008/user/tenants?email={some_email}`
+
+### Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+email | String | An user email
+
+
+## Get User's Signature
+
+```shell
+curl --include \
+     --header "Authorization: Bearer meowmeowmeow" \
+  'http://localhost:9008/user/24/profile/signature'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "encodedSignature": "/9j/4AAQSkZJRgABAQEASABIAAD/4QBYRXhpZgAATU0AKgAAAAgAAgESAAMAAAAB\r\nAAEAAIdpAAQAAAABAAAAJgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAADp6AD\r\nAAQAAAABAAABLAAAAAD/7QA4UGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAAA4QklN\r\nBCUAAAAAABDUHYzZjwCyBOmACZjs+EJ+/8AAEQgBLAOnAwEiAAIRAQMRAf/EAB8A\r\nAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQ//Z......",
+  "width": 0,
+  "length": 0
+}
+```
+
+This endpoint retrieves the an user's signature.
+
+
+### HTTP Request
+
+`GET http://localhost:9008/user/{userId}/profile/signature`
+
+### Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+userId | String | A user id for which you want to retrieve the signature
+
+
+## Get Facility's Users
+
+```shell
+curl --include \
+     --header "Authorization: Bearer meowmeowmeow" \
+  'http://localhost:9008/user/facility/some_facility/users'
+```
+
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "meta": {
+    "href": null
+  },
+  "count": 1,
+  "items": [
+    {
+      "meta": {
+        "href": null
+      },
+      "userId": 24,
+      "tenantUUID": null,
+      "firstName": "James",
+      "lastName": "Smith",
+      "email": "jamessmith@strollhealth.com",
+      "roles": [
+        "Physician"
+      ],
+      "facilities": [
+        {
+          "meta": {
+            "href": null
+          },
+          "site": {
+            "id": 3,
+            "tenantUUID": "sh",
+            "name": "some_facility",
+            "type": "Facility",
+            "address": {
+              "streetNumber": "551",
+              "streetPreDir": null,
+              "streetName": "Casey Drive",
+              "streetType": null,
+              "streetPostDir": null,
+              "city": "Berkeley",
+              "state": null,
+              "zip": "94032",
+              "zip4": null,
+              "county": "",
+              "country": "US",
+              "lat": 123,
+              "lng": 456
+            },
+            "fax": null,
+            "phone": null,
+            "lastUpdateDate": 1436552466000,
+            "createDate": 1430720466000,
+            "new": false
+          }
+        }
+      ],
+      "practices": [
+        {
+          "meta": {
+            "href": null
+          },
+          "site": {
+            "id": 4,
+            "tenantUUID": "sh",
+            "name": "some_practice",
+            "type": "Practice",
+            "address": {
+              "streetNumber": "551",
+              "streetPreDir": null,
+              "streetName": "Casey Drive",
+              "streetType": null,
+              "streetPostDir": null,
+              "city": "Berkeley",
+              "state": null,
+              "zip": "94932",
+              "zip4": null,
+              "county": null,
+              "country": "US",
+              "lat": 123,
+              "lng": 456
+            },
+            "fax": null,
+            "phone": null,
+            "lastUpdateDate": 1438577683000,
+            "createDate": 1430720641000,
+            "new": false
+          }
+        }
+      ],
+      "profile": {
+        "meta": {
+          "href": null
+        },
+        "hasSignuature": true,
+        "npi": "1659400984"
+      }
+    }
+  ]
+}
+```
+
+This endpoint retrieves all users corresponding to a facility.
+
+
+### HTTP Request
+
+`GET http://localhost:9008/user/facility/{facility_name}/users`
+
+### Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+facility_name | String | Name of the facility for which you wish to retrieve users
+
+
+## Update User's Signature
+
+```shell
+curl --include \
+     --header "Authorization: Bearer meowmeowmeow" \
+  'http://localhost:9008/user/tenants?email=jamessmith@strollhealth.com'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  "sh"
+]
+```
+
+This endpoint retrieves tenants corresponding to an email.
+
+
+### HTTP Request
+
+`GET http://localhost:9008/user/tenants?email={some_email}`
+
+### Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+email | String | An user email
