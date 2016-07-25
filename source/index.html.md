@@ -23,9 +23,9 @@ Welcome to the Stroll Health API!
 > To authorize, use this code:
 
 ```shell
-require 'kittn'
+require 'stroll'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+api = Stroll::APIClient.authorize!('meowmeowmeow')
 ```
 
 
