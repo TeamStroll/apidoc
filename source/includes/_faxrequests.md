@@ -36,7 +36,7 @@ curl --include \
 			 "userId": 1,
 			 "practiceId": 3,
 			 "appointment_id": 301,
-			 "faxDTO": 
+			 "faxDTO":
 			  { "member_ID": "",
 			    "insurance_carrier": "Self",
 			    "dob": "1980-01-01",
@@ -107,9 +107,9 @@ curl --include \
 			    "patientFirstName": "John",
 			    "patientEmail": "john@johndoe.com",
 			    "userId": 1,
-			    "practiceId": 3 } }" \
-			    ```
-  
+			    "practiceId": 3 } }"
+```
+
 > 'http://localhost:9090/sh/faxrequests'
 > The above command returns JSON structured like this:
 
