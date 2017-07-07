@@ -2,8 +2,6 @@
 
 ## getDrugList
 
->Example Request:
-
 ```shell
 curl 'https://patient-dev.strollhealth.com/api/getDrugList'
 -H 'if-none-match: W/"1c095-VIDumywPrjdPlLwFZJSAr3BPbx8"'
@@ -19,7 +17,7 @@ curl 'https://patient-dev.strollhealth.com/api/getDrugList'
 
 > Example Response (First 3 entries)
 
-```shell
+```json
 [
   {
     "genericName": "Aripiprazole",
@@ -42,4 +40,4 @@ curl 'https://patient-dev.strollhealth.com/api/getDrugList'
 This endpoint fetches the list of all drugs supported in Stroll's prescription portal, also corresponding to the list of drugs supported by Iodine.
 
 ### HTTP Request
-`GET /api/getDrugList`
+`GET https://findcare.strollhealth.com/api/getDrugList`

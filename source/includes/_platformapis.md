@@ -1,8 +1,1027 @@
 # Platform APIs
 
-## getSimplePrices
+## getFaxRequest
 
->Example Request:
+```shell
+curl 'https://provider-dev.strollhealth.com/api/faxrequests'
+-H 'origin: https://provider-dev.strollhealth.com'
+-H 'accept-encoding: gzip, deflate, br'
+-H 'x-requested-with: XMLHttpRequest'
+-H 'accept-language: en-US,en;q=0.8'
+-H 'authorization: Bearer meowmeowmeow'
+-H 'accept: application/json, text/plain, */*'
+-H 'referer: https://provider-dev.strollhealth.com/radiology_orders/overview'
+-H 'authority: provider-dev.strollhealth.com'
+--data-binary '{"startDate":"04-07-2017","endDate":"08-07-2017",
+"facilityIds":[456,454],"limit":40,"page":0,"userId":2}'
+--compressed
+
+```
+
+>Example Response:
+
+```json
+{
+  "meta": {
+    "href": null,
+    "mediaType": "application/vnd.sh-v1.0+json"
+  },
+  "count": 2,
+  "items": [
+    {
+      "meta": {
+        "href": "http://localhost:9090/sh/pendingFaxRequests/3530",
+        "mediaType": "application/vnd.sh-v1.0+json"
+      },
+      "id": 3530,
+      "faxRequestId": 3530,
+      "appointment": {
+        "meta": {
+          "href": null,
+          "mediaType": "application/vnd.sh-v1.0+json"
+        },
+        "appointmentId": 2776,
+        "equipmentId": 0,
+        "patientId": 7444,
+        "facilityId": 456,
+        "faxRequestId": 3530,
+        "startTime": 28800000,
+        "endTime": 28800000,
+        "cptCode": "76604",
+        "cost": 160,
+        "reasonNotYetScheduled": "N/A",
+        "stillWantToSchedule": true,
+        "orderStatus": "PENDING_AUTH",
+        "patientDTO": {
+          "meta": {
+            "href": null,
+            "mediaType": "application/vnd.sh-v1.0+json"
+          },
+          "id": 7444,
+          "autopilotContactId": "person_A893B7DC-8D10-4046-B6FD-21884B130C7C",
+          "firstName": "And",
+          "lastName": "Rew",
+          "birthDate": "1996-02-15 00:00:00.0",
+          "gender": "M",
+          "email": "mvb97097@tqosi.com",
+          "zip": "94704",
+          "paySpecDTO": {
+            "pi": "-1",
+            "payerName": "Self",
+            "mi": ""
+          },
+          "miInvalid": false,
+          "rejectReason": null,
+          "phoneNumber": "(324) 324-2342",
+          "phoneNumberType": "Cell",
+          "agreedToTerms": true,
+          "termVersion": "1.0",
+          "linkId": "08061565-e04a-4e38-bd91-4ea0e8d5c271",
+          "middleInitital": null
+        }
+      },
+      "patientId": 7444,
+      "userId": -1,
+      "practiceId": 0,
+      "patientLastName": "Rew",
+      "patientFirstName": "And",
+      "patientEmail": "mvb97097@tqosi.com",
+      "patientPhoneNumber": "(324) 324-2342",
+      "referringPhysicianName": " ",
+      "referringPhysicianId": -1,
+      "currentFacilityId": -1,
+      "currentFacilityName": null,
+      "cptCode": "76604",
+      "facilityFaxRequestType": 1,
+      "patientFaxRequestType": 0,
+      "physicianFaxRequestType": 0,
+      "productionPatientPortal": null,
+      "sendFaxToFacility": true,
+      "sendFaxToPatient": false,
+      "sendFaxToPhysician": false,
+      "patientFaxStatus": "DELIVERED",
+      "physicianFaxStatus": "PENDING",
+      "facilityFaxStatus": "DELIVERED",
+      "lastUpdateDate": 1498845271000,
+      "createDate": 1498845271000,
+      "createDateAsString": "06-30-2017",
+      "faxDTO": {
+        "meta": {
+          "href": null,
+          "mediaType": "application/vnd.sh-v1.0+json"
+        },
+        "male_checkbox": true,
+        "female_checkbox": false,
+        "cell_checkbox": true,
+        "office_checkbox": false,
+        "home_checkbox": false,
+        "physician_portal_checkbox": false,
+        "fax_written_report_checkbox": true,
+        "fax_STAT_checkbox": false,
+        "phone_STAT_checkbox": false,
+        "phone_call_report_checkbox": true,
+        "send_CD_checkbox": false,
+        "send_patient_with_CD_checkbox": false,
+        "send_films_checkbox": false,
+        "send_patient_with_films_checkbox": false,
+        "courier_films_checkbox": false,
+        "eligibility_validated_checkbox": false,
+        "cash_alert": "Cash Pay",
+        "mammogram": null,
+        "dob": "1996-02-15",
+        "plan": null,
+        "referring_physician_NPI": " ",
+        "referring_physician_name": " ",
+        "insurance_carrier": "Self",
+        "estimate_out_of_pocket_cost": "$160.00",
+        "cpt_code": "76604",
+        "member_ID": "",
+        "facility_fax": "(844) 787-6555",
+        "referring_physician_fax": "(844) 787-6555",
+        "facility_name": "Norcal Imaging Oakland",
+        "facility_address_1": "3200 Telegraph Avenue",
+        "facility_address_2": "Oakland",
+        "facility_address_3": "CA 94609",
+        "facility_phone": "(312) 3-",
+        "referral_ID": null,
+        "patient_name": "And Rew",
+        "pregnant_checkbox": false,
+        "patient_phone_number": "(324) 324-2342",
+        "primary_language": "",
+        "verified_eligibility_date": "",
+        "received_prior_auth_checkbox": false,
+        "prior_auth_number": "",
+        "good_until_date": "",
+        "service_type": null,
+        "in_network_copay": "",
+        "in_network_coinsurance": "",
+        "in_network_single_maximum_total": "",
+        "in_network_single_maximum_remaining": "",
+        "in_network_single_deductible_total": "",
+        "in_network_single_deductible_remaining": "",
+        "in_network_family_maximum_total": "",
+        "in_network_family_maximum_remaining": "",
+        "in_network_family_deductible_total": "",
+        "in_network_family_deductible_remaining": "",
+        "out_network_copay": "",
+        "out_network_coinsurance": "",
+        "out_network_single_maximum_remaining": "",
+        "out_network_single_deductible_remaining": "",
+        "out_network_single_deductible_total": "",
+        "out_network_single_maximum_total": "",
+        "out_network_family_maximum_total": "",
+        "out_network_family_maximum_remaining": "",
+        "out_network_family_deductible_total": "",
+        "out_network_family_deductible_remaining": "",
+        "referring_physician_phone": " ",
+        "referring_physician_address": "2150 Shattuck Ave PH, Berkeley, CA 94704",
+        "physician_portal_url": "",
+        "courier_films_to_name": "",
+        "courier_films_to_address": "",
+        "procedure_short_description": "Ultrasound Chest",
+        "icd10_code": "",
+        "comparison_study_checkbox": false,
+        "clinical_indication": "patient will bring doctor's referral",
+        "special_instructions": "",
+        "medication_provided_checkbox": false,
+        "medication_provided_description": "",
+        "procedure_locations": "",
+        "previous_MRIMRA_checkbox": false,
+        "symptom_onset_date": "",
+        "claustrophobic_checkbox": false,
+        "pacemaker_checkbox": false,
+        "pacemaker_description": "",
+        "other_implanted_metal_checkbox": false,
+        "other_implanted_metal_description": "",
+        "iv_contrast_allergy_checkbox": false,
+        "creatinine": "",
+        "iv_contrast_allergy_description": "",
+        "oral_contrast_allergy_checkbox": false,
+        "oral_contrast_allergy_description": "",
+        "renal_disease_checkbox": false,
+        "diabetes_checkbox": false,
+        "other_allergies_checkbox": false,
+        "other_allergies_description": "",
+        "previous_MRIMRA_date": "",
+        "creatinine_date": "",
+        "taking_metformin_checkbox": false,
+        "referral_date": "2017-06-30",
+        "referring_physician_signature": "no signature"
+      },
+      "costsDTO": {
+        "meta": {
+          "href": null,
+          "mediaType": "application/vnd.sh-v1.0+json"
+        },
+        "costDTOs": [],
+        "insuranceDTO": {
+          "patientId": null,
+          "serviceType": null,
+          "deductDate": null,
+          "plan": null,
+          "payerId": null,
+          "payer": null,
+          "inIndividDeductTotal": 0,
+          "outIndividDeductTotal": 0,
+          "inIndividDeductRemain": 0,
+          "outIndividDeductRemain": 0,
+          "inFamilyDeductTotal": 0,
+          "outFamilyDeductTotal": 0,
+          "inFamilyDeductRemain": 0,
+          "outFamilyDeductRemain": 0,
+          "inIndividMaxTotal": 0,
+          "outIndividMaxTotal": 0,
+          "inIndividMaxRemain": 0,
+          "outIndividMaxRemain": 0,
+          "inFamilyMaxTotal": 0,
+          "outFamilyMaxTotal": 0,
+          "inFamilyMaxRemain": 0,
+          "outFamilyMaxRemain": 0,
+          "incopay": 0,
+          "incopayOutpatient": 0,
+          "outcopay": 0,
+          "incoinsurance": 0,
+          "outcoinsurance": 0,
+          "tier1Deduct": 0,
+          "tier1FamilyDeduct": 0,
+          "tier1Remain": 0,
+          "tier1FamilyRemain": 0,
+          "tier1MaxDeduct": 0,
+          "tier1FamilyMaxDeduct": 0,
+          "tier1MaxRemain": 0,
+          "tier1FamilyMaxRemain": 0,
+          "tier1Copay": 0,
+          "tier1Coinsurance": 0
+        },
+        "notes": null,
+        "simpleOpeningsByFacIds": null
+      },
+      "rfaPhysicianFaxRequestType": "0",
+      "pr2PhysicianFaxRequestType": "0",
+      "pr2FaxDTO": null,
+      "rfaFaxDTO": null,
+      "imageDTO": null,
+      "partner": null,
+      "chosenFacilityId": null,
+      "appointmentStart": null,
+      "appointmentEnd": null,
+      "cancelReasons": null,
+      "cancelNotes": null,
+      "sendFaxToClaimsAdministrator": false,
+      "sendFaxToClaimsAdministratorCompany": false
+    },
+    {
+      "meta": {
+        "href": "http://localhost:9090/sh/pendingFaxRequests/3495",
+        "mediaType": "application/vnd.sh-v1.0+json"
+      },
+      "id": 3495,
+      "faxRequestId": 3495,
+      "appointment": {
+        "meta": {
+          "href": null,
+          "mediaType": "application/vnd.sh-v1.0+json"
+        },
+        "appointmentId": 2741,
+        "equipmentId": 0,
+        "patientId": 7106,
+        "facilityId": 456,
+        "faxRequestId": 3495,
+        "startTime": 28800000,
+        "endTime": 28800000,
+        "cptCode": "76604",
+        "cost": 160,
+        "reasonNotYetScheduled": "N/A",
+        "stillWantToSchedule": true,
+        "orderStatus": "PENDING_AUTH",
+        "patientDTO": {
+          "meta": {
+            "href": null,
+            "mediaType": "application/vnd.sh-v1.0+json"
+          },
+          "id": 7106,
+          "autopilotContactId": "person_DF3613F6-A675-4E4C-AA81-90D0D1C6779B",
+          "firstName": "Don",
+          "lastName": "Sun",
+          "birthDate": "1996-05-26 00:00:00.0",
+          "gender": "M",
+          "email": "don_sun@live.com",
+          "zip": "94704",
+          "paySpecDTO": {
+            "pi": null,
+            "payerName": "TIGER",
+            "mi": "dlkjfkdljflkdjfalkdjflkadjfladkf"
+          },
+          "miInvalid": false,
+          "rejectReason": null,
+          "phoneNumber": "(123) 456-7890",
+          "phoneNumberType": "Cell",
+          "agreedToTerms": true,
+          "termVersion": "1.0",
+          "linkId": "d6935749-5cbd-4fd2-af42-69b0058023d1",
+          "middleInitital": null
+        }
+      },
+      "patientId": 7106,
+      "userId": -1,
+      "practiceId": 0,
+      "patientLastName": "Sun",
+      "patientFirstName": "Don",
+      "patientEmail": "don_sun@live.com",
+      "patientPhoneNumber": "(123) 456-7890",
+      "referringPhysicianName": " ",
+      "referringPhysicianId": -1,
+      "currentFacilityId": -1,
+      "currentFacilityName": null,
+      "cptCode": "76604",
+      "facilityFaxRequestType": 1,
+      "patientFaxRequestType": 0,
+      "physicianFaxRequestType": 0,
+      "productionPatientPortal": null,
+      "sendFaxToFacility": true,
+      "sendFaxToPatient": false,
+      "sendFaxToPhysician": false,
+      "patientFaxStatus": "DELIVERED",
+      "physicianFaxStatus": "PENDING",
+      "facilityFaxStatus": "DELIVERED",
+      "lastUpdateDate": 1498154924000,
+      "createDate": 1498154924000,
+      "createDateAsString": "06-22-2017",
+      "faxDTO": {
+        "meta": {
+          "href": null,
+          "mediaType": "application/vnd.sh-v1.0+json"
+        },
+        "male_checkbox": true,
+        "female_checkbox": false,
+        "cell_checkbox": true,
+        "office_checkbox": false,
+        "home_checkbox": false,
+        "physician_portal_checkbox": false,
+        "fax_written_report_checkbox": true,
+        "fax_STAT_checkbox": false,
+        "phone_STAT_checkbox": false,
+        "phone_call_report_checkbox": true,
+        "send_CD_checkbox": false,
+        "send_patient_with_CD_checkbox": false,
+        "send_films_checkbox": false,
+        "send_patient_with_films_checkbox": false,
+        "courier_films_checkbox": false,
+        "eligibility_validated_checkbox": false,
+        "cash_alert": "Cash Pay",
+        "mammogram": null,
+        "dob": "Invalid date",
+        "plan": null,
+        "referring_physician_NPI": " ",
+        "referring_physician_name": " ",
+        "insurance_carrier": "Self",
+        "estimate_out_of_pocket_cost": "$160.00",
+        "cpt_code": "76604",
+        "member_ID": "",
+        "facility_fax": "(844) 787-6555",
+        "referring_physician_fax": "(844) 787-6555",
+        "facility_name": "Norcal Imaging Oakland",
+        "facility_address_1": "3200 Telegraph Avenue",
+        "facility_address_2": "Oakland",
+        "facility_address_3": "CA 94609",
+        "facility_phone": "(312) 3-",
+        "referral_ID": null,
+        "patient_name": "Don Sun",
+        "pregnant_checkbox": false,
+        "patient_phone_number": "(123) 456-7890",
+        "primary_language": "",
+        "verified_eligibility_date": "",
+        "received_prior_auth_checkbox": false,
+        "prior_auth_number": "",
+        "good_until_date": "",
+        "service_type": null,
+        "in_network_copay": "",
+        "in_network_coinsurance": "",
+        "in_network_single_maximum_total": "",
+        "in_network_single_maximum_remaining": "",
+        "in_network_single_deductible_total": "",
+        "in_network_single_deductible_remaining": "",
+        "in_network_family_maximum_total": "",
+        "in_network_family_maximum_remaining": "",
+        "in_network_family_deductible_total": "",
+        "in_network_family_deductible_remaining": "",
+        "out_network_copay": "",
+        "out_network_coinsurance": "",
+        "out_network_single_maximum_remaining": "",
+        "out_network_single_deductible_remaining": "",
+        "out_network_single_deductible_total": "",
+        "out_network_single_maximum_total": "",
+        "out_network_family_maximum_total": "",
+        "out_network_family_maximum_remaining": "",
+        "out_network_family_deductible_total": "",
+        "out_network_family_deductible_remaining": "",
+        "referring_physician_phone": " ",
+        "referring_physician_address": "2150 Shattuck Ave PH, Berkeley, CA 94704",
+        "physician_portal_url": "",
+        "courier_films_to_name": "",
+        "courier_films_to_address": "",
+        "procedure_short_description": "Ultrasound Chest",
+        "icd10_code": "",
+        "comparison_study_checkbox": false,
+        "clinical_indication": "patient will bring doctor's referral",
+        "special_instructions": "",
+        "medication_provided_checkbox": false,
+        "medication_provided_description": "",
+        "procedure_locations": "",
+        "previous_MRIMRA_checkbox": false,
+        "symptom_onset_date": "",
+        "claustrophobic_checkbox": false,
+        "pacemaker_checkbox": false,
+        "pacemaker_description": "",
+        "other_implanted_metal_checkbox": false,
+        "other_implanted_metal_description": "",
+        "iv_contrast_allergy_checkbox": false,
+        "creatinine": "",
+        "iv_contrast_allergy_description": "",
+        "oral_contrast_allergy_checkbox": false,
+        "oral_contrast_allergy_description": "",
+        "renal_disease_checkbox": false,
+        "diabetes_checkbox": false,
+        "other_allergies_checkbox": false,
+        "other_allergies_description": "",
+        "previous_MRIMRA_date": "",
+        "creatinine_date": "",
+        "taking_metformin_checkbox": false,
+        "referral_date": "2017-06-22",
+        "referring_physician_signature": "no signature"
+      },
+      "costsDTO": {
+        "meta": {
+          "href": null,
+          "mediaType": "application/vnd.sh-v1.0+json"
+        },
+        "costDTOs": [],
+        "insuranceDTO": {
+          "patientId": null,
+          "serviceType": null,
+          "deductDate": null,
+          "plan": null,
+          "payerId": null,
+          "payer": null,
+          "inIndividDeductTotal": 0,
+          "outIndividDeductTotal": 0,
+          "inIndividDeductRemain": 0,
+          "outIndividDeductRemain": 0,
+          "inFamilyDeductTotal": 0,
+          "outFamilyDeductTotal": 0,
+          "inFamilyDeductRemain": 0,
+          "outFamilyDeductRemain": 0,
+          "inIndividMaxTotal": 0,
+          "outIndividMaxTotal": 0,
+          "inIndividMaxRemain": 0,
+          "outIndividMaxRemain": 0,
+          "inFamilyMaxTotal": 0,
+          "outFamilyMaxTotal": 0,
+          "inFamilyMaxRemain": 0,
+          "outFamilyMaxRemain": 0,
+          "incopay": 0,
+          "incopayOutpatient": 0,
+          "outcopay": 0,
+          "incoinsurance": 0,
+          "outcoinsurance": 0,
+          "tier1Deduct": 0,
+          "tier1FamilyDeduct": 0,
+          "tier1Remain": 0,
+          "tier1FamilyRemain": 0,
+          "tier1MaxDeduct": 0,
+          "tier1FamilyMaxDeduct": 0,
+          "tier1MaxRemain": 0,
+          "tier1FamilyMaxRemain": 0,
+          "tier1Copay": 0,
+          "tier1Coinsurance": 0
+        },
+        "notes": null,
+        "simpleOpeningsByFacIds": null
+      },
+      "rfaPhysicianFaxRequestType": "0",
+      "pr2PhysicianFaxRequestType": "0",
+      "pr2FaxDTO": null,
+      "rfaFaxDTO": null,
+      "imageDTO": null,
+      "partner": null,
+      "chosenFacilityId": null,
+      "appointmentStart": null,
+      "appointmentEnd": null,
+      "cancelReasons": null,
+      "cancelNotes": null,
+      "sendFaxToClaimsAdministrator": false,
+      "sendFaxToClaimsAdministratorCompany": false
+    }
+  ],
+  "dayTotalCount": 2,
+  "dayTotals": [
+    {
+      "meta": {
+        "href": null,
+        "mediaType": "application/vnd.sh-v1.0+json"
+      },
+      "date": "06-22-2017",
+      "total": 1
+    },
+    {
+      "meta": {
+        "href": null,
+        "mediaType": "application/vnd.sh-v1.0+json"
+      },
+      "date": "06-30-2017",
+      "total": 1
+    }
+  ]
+}
+```
+
+Returns fax request and order information for completed order within the time range specified by startTime and endTime, for a radiologist and associated facilities.
+
+### HTTP Request
+`POST https://provider.strollhealth.com/api/faxrequest`
+
+### Parameters
+Parameter | Type | Description
+--------- | ------- | -----------
+startDate | String | Date to start viewing fax requests from, in format MM-DD-YYYY
+endDate | String | Date to end viewing fax requests from, in format MM-DD-YYYY
+facilityIds | Number array| IDs corresponding to the user's associated facilities.
+limit | Number | Maximum number of fax requests to return.
+page | Number | Which page of fax requests to view, if multiple
+userId | Number | Unique ID corresponding to user.
+
+
+## getFacilities
+```shell
+curl 'https://provider-qa.strollhealth.com/api/search'
+-H 'origin: https://provider-qa.strollhealth.com'
+-H 'accept-encoding: gzip, deflate, br'
+-H 'x-requested-with: XMLHttpRequest'
+-H 'accept-language: en-US,en;q=0.8'
+-H 'authorization: Bearer meowmeowmeow'
+-H 'content-type: application/json'
+-H 'accept: application/json, text/javascript, */*; q=0.01'
+-H 'referer: https://provider-qa.strollhealth.com/provider_dashboard/results'
+-H 'authority: provider-qa.strollhealth.com'
+--data-binary '{"patientId":5531,"userId":1,"cptCodeIds":73701,
+"pricingException":"undefined","bilateral":1}'
+--compressed
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+    "meta": {
+        "href": "/prices",
+        "mediaType": "application/vnd.sh-v1.0+json"
+    },
+    "costDTOs": [
+        {
+            "code": "73701",
+            "cost": "N/A",
+            "facilityId": "10083",
+            "patientId": "5531",
+            "fromAddress": null,
+            "facility": "PAMF - San Carlos Radiology Center",
+            "address": "301 Industrial Rd, Level 1, San Carlos, CA 94070",
+            "image": "https://provider-qa.strollhealth.com/sh/images/generic_facility_image.png",
+            "distance": "24.8 mi",
+            "phone": "548",
+            "fax": "824",
+            "lat": 37.50716,
+            "lng": -122.26052,
+            "color": "3A",
+            "frontColor": "green",
+            "index": 0,
+            "selected": false,
+            "openingsDTO": null,
+            "quality": 3,
+            "languages": [],
+            "hasFreeParking": false,
+            "hasShuttleService": false,
+            "hasWifi": false,
+            "hasCoffee": false,
+            "adaaccessible": false
+        },
+        {
+            "code": "73701",
+            "cost": "450.00",
+            "facilityId": "526",
+            "patientId": "5531",
+            "fromAddress": null,
+            "facility": "Inview Imaging Fremont",
+            "address": "39465 Paseo Padre Parkway, Suite 1000, Fremont, CA 94538",
+            "image": "https://provider-qa.strollhealth.com/sh/images/526_Inview%20Imaging%20Center.png",
+            "distance": "26.8 mi",
+            "phone": "197",
+            "fax": "198",
+            "lat": 37.549896,
+            "lng": -121.97604,
+            "color": "3A",
+            "frontColor": "green",
+            "index": 0,
+            "selected": false,
+            "openingsDTO": null,
+            "quality": 3,
+            "languages": [],
+            "hasFreeParking": false,
+            "hasShuttleService": false,
+            "hasWifi": false,
+            "hasCoffee": false,
+            "adaaccessible": false
+        },
+        ... more ...
+    ],
+    "insuranceDTO": null,
+    "notes": "Calculated based on patient zip",
+    "simpleOpeningsByFacIds": {
+        "368": [
+            {
+                "meta": {
+                    "href": null,
+                    "mediaType": "application/vnd.sh-v1.0+json"
+                },
+                "startTime": 1499356800000,
+                "endTime": 1499358000000,
+                "facilityEquipmentId": 35,
+                "facilityId": 0,
+                "contrast": "WITHOUT"
+            },
+            {
+                "meta": {
+                    "href": null,
+                    "mediaType": "application/vnd.sh-v1.0+json"
+                },
+                "startTime": 1499358000000,
+                "endTime": 1499359200000,
+                "facilityEquipmentId": 35,
+                "facilityId": 0,
+                "contrast": "WITHOUT"
+            },
+            ... more ...
+        ]
+    }
+}
+```
+
+This endpoint retrieves facilities corresponding to a user and CPT code.
+
+### HTTP Request
+`POST https://provider-qa.strollhealth.com/api/search`
+### Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+patientId | Number | ID corresponding to the patient
+userId | Number | ID corresponding to the provider
+cptCodeIds | Number | CPT code for the procedure
+pricingException | String | ???
+bilateral | Number | 1 if the procedure is bilateral, 0 otherwise
+
+## getClinicalIndicationSuggestion
+
+```shell
+curl 'https://provider-dev.strollhealth.com/api/getClinicalIndication'
+-H 'origin: https://provider-dev.strollhealth.com'
+-H 'accept-encoding: gzip, deflate, br'
+-H 'x-requested-with: XMLHttpRequest'
+-H 'accept-language: en-US,en;q=0.8'
+-H 'authorization: Bearer meowmeowmeow'
+-H 'content-type: application/json'
+-H 'accept: application/json, text/javascript, */*; q=0.01'
+-H 'referer: https://provider-dev.strollhealth.com/provider_dashboard/finalize_order'
+-H 'authority: provider-dev.strollhealth.com'  
+--data-binary '{"substring":"bas","limit":5}'
+--compressed
+```
+
+This endpoint retrieves a list of clinical indications that contain the substring parameter.
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "meta": {
+        "href": null,
+        "mediaType": "application/vnd.sh-v1.0+json"
+    },
+    "icd10DTOs": [
+        {
+            "meta": {
+                "href": null,
+                "mediaType": "application/vnd.sh-v1.0+json"
+            },
+            "code": "Y9333",
+            "description": "Activity, BASE jumping"
+        },
+        {
+            "meta": {
+                "href": null,
+                "mediaType": "application/vnd.sh-v1.0+json"
+            },
+            "code": "Y9364",
+            "description": "Activity, baseball"
+        },
+        {
+            "meta": {
+                "href": null,
+                "mediaType": "application/vnd.sh-v1.0+json"
+            },
+            "code": "Y9367",
+            "description": "Activity, basketball"
+        },
+        {
+            "meta": {
+                "href": null,
+                "mediaType": "application/vnd.sh-v1.0+json"
+            },
+            "code": "Y0802XA",
+            "description": "Assault by strike by baseball bat, initial encounter"
+        },
+        {
+            "meta": {
+                "href": null,
+                "mediaType": "application/vnd.sh-v1.0+json"
+            },
+            "code": "Y0802XS",
+            "description": "Assault by strike by baseball bat, sequela"
+        }
+    ]
+}
+```
+
+### HTTP Request
+
+`POST https://provider-dev.strollhealth.com/api/getClinicalIndication`
+
+### Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+Substring | String | Desired string each indication contains in the results.
+Limit | Number | The number of results shown.
+
+## getRadiologyFacilities
+
+```shell
+curl 'https://provider-dev.strollhealth.com/api/radiology/prices'
+-H 'origin: https://provider-dev.strollhealth.com'
+-H 'accept-encoding: gzip, deflate, br'
+-H 'x-requested-with: XMLHttpRequest'
+-H 'accept-language: en-US,en;q=0.8'
+-H 'authorization: Bearer meowmeowmeow'
+-H 'content-type: application/json'
+-H 'accept: application/json, text/javascript, */*; q=0.01'
+-H 'referer: https://provider-dev.strollhealth.com/radiology_dashboard/results'
+-H 'authority: provider-dev.strollhealth.com'
+--data-binary '{"patientId":7461,"userId":2,"cptCodeIds":77012,
+"pricingException":"undefined","bilateral":"undefined","facilityIds":[456,454]}'
+--compressed
+```
+
+>Example Response:
+
+```json
+{
+  "meta": {
+    "href": "/prices",
+    "mediaType": "application/vnd.sh-v1.0+json"
+  },
+  "costDTOs": [
+    {
+      "code": "77012",
+      "cost": "N/A",
+      "facilityId": "454",
+      "patientId": "7461",
+      "fromAddress": null,
+      "facility": "Northern California Pet Imaging",
+      "address": "3195 Folsom Boulevard, Sacramento, CA 95816",
+      "image": "https://provider-dev.strollhealth.com/sh/images/454_Northern%20California%20Pet%20Imaging.png.jpg",
+      "distance": "74.5 mi",
+      "phone": "4864",
+      "fax": "9167376203",
+      "lat": 38.568726,
+      "lng": -121.465225,
+      "color": "3A",
+      "frontColor": "green",
+      "index": 0,
+      "selected": false,
+      "openingsDTO": null,
+      "quality": 3,
+      "languages": [],
+      "hasFreeParking": false,
+      "hasShuttleService": false,
+      "hasWifi": false,
+      "hasCoffee": false,
+      "adaaccessible": false
+    },
+    {
+      "code": "77012",
+      "cost": "N/A",
+      "facilityId": "456",
+      "patientId": "7461",
+      "fromAddress": null,
+      "facility": "Norcal Imaging Oakland",
+      "address": "3200 Telegraph Avenue, Oakland, CA 94609",
+      "image": "https://provider-dev.strollhealth.com/sh/images/456_Norcal%20Imaging%20Oakland.png",
+      "distance": "8.7 mi",
+      "phone": "3123",
+      "fax": "5106631951",
+      "lat": 37.820885,
+      "lng": -122.2664,
+      "color": "3A",
+      "frontColor": "green",
+      "index": 0,
+      "selected": false,
+      "openingsDTO": null,
+      "quality": 3,
+      "languages": [],
+      "hasFreeParking": false,
+      "hasShuttleService": false,
+      "hasWifi": false,
+      "hasCoffee": false,
+      "adaaccessible": false
+    }
+  ],
+  "insuranceDTO": null,
+  "notes": null,
+  "simpleOpeningsByFacIds": {}
+}
+```
+
+This returns pricing and facility information for a radiologist's associated facilities, given procedure information , and radiologist userId and associated facilities' IDs.
+
+### HTTP Request
+`POST https://provider.strollhealth.com/api/radiology/prices`
+
+### Parameters
+Parameter | Type | Description
+--------- | ------- | -----------
+bilateral | Number | Indicates whether the procedure is bilateral. 1 if True, 0 if False.
+cptCodeIds | Number | CPT Code identifying the type of procedure.
+facilityIds | Number array | IDs corresponding to the user's associated facilities.
+patientId | Number | Unique ID corresponding to patient.
+pricingException | String ? | ??
+userId | Number | Unique ID corresponding to user.
+
+## getEquipment
+
+```shell
+curl 'https://provider-qa.strollhealth.com/api/getEquipment'
+-H 'origin: https://provider-qa.strollhealth.com'
+-H 'accept-encoding: gzip, deflate, br'
+-H 'x-requested-with: XMLHttpRequest' -H 'accept-language: en-US,en;q=0.8'
+-H 'authorization: Bearer meowmeowmeow'
+-H 'content-type: application/json'
+-H 'accept: application/json, text/javascript, */*; q=0.01'
+-H 'referer: https://provider-qa.strollhealth.com/radiology_dashboard/schedule'
+-H 'authority: provider-qa.strollhealth.com'
+--data-binary '{"facilityId":10018}'
+--compressed
+
+```
+
+>Example Response:
+
+```json
+{
+  "meta": {
+    "href": null,
+    "mediaType": "application/vnd.sh-v1.0+json"
+  },
+  "facilityEquipmentDTOs": [
+    {
+      "meta": {
+        "href": "/facility/equipment/28",
+        "mediaType": "application/vnd.sh-v1.0+json"
+      },
+      "equipmentDTO": {
+        "meta": {
+          "href": null,
+          "mediaType": "application/vnd.sh-v1.0+json"
+        },
+        "id": 28,
+        "modality": "MRI",
+        "manufacturer": "Siemens",
+        "model": "S2000",
+        "yearMade": 949454130000,
+        "channels": 8,
+        "magnetStrength": 2.4,
+        "additionalInfo": "",
+        "type": "Open",
+        "tableWeight": 3500,
+        "rotationTime": 0.2,
+        "slices": 32,
+        "name": "S2000"
+      },
+      "facilityEquipmentId": 28,
+      "additionalInfo": "",
+      "facilityId": 10018,
+      "name": null
+    },
+    {
+      "meta": {
+        "href": "/facility/equipment/30",
+        "mediaType": "application/vnd.sh-v1.0+json"
+      },
+      "equipmentDTO": {
+        "meta": {
+          "href": null,
+          "mediaType": "application/vnd.sh-v1.0+json"
+        },
+        "id": 30,
+        "modality": "CT",
+        "manufacturer": "Siemens",
+        "model": "S2010",
+        "yearMade": 949454192000,
+        "channels": 8,
+        "magnetStrength": 2.4,
+        "additionalInfo": "",
+        "type": "Open",
+        "tableWeight": 2100,
+        "rotationTime": 0.2,
+        "slices": 32,
+        "name": "S2010"
+      },
+      "facilityEquipmentId": 30,
+      "additionalInfo": "",
+      "facilityId": 10018,
+      "name": null
+    },
+    {
+      "meta": {
+        "href": "/facility/equipment/32",
+        "mediaType": "application/vnd.sh-v1.0+json"
+      },
+      "equipmentDTO": {
+        "meta": {
+          "href": null,
+          "mediaType": "application/vnd.sh-v1.0+json"
+        },
+        "id": 32,
+        "modality": "Ultrasound",
+        "manufacturer": "Siemens",
+        "model": "S2020",
+        "yearMade": 949454259000,
+        "channels": 8,
+        "magnetStrength": 2.4,
+        "additionalInfo": "",
+        "type": "Open",
+        "tableWeight": 2900,
+        "rotationTime": 0.2,
+        "slices": 32,
+        "name": "S2020"
+      },
+      "facilityEquipmentId": 32,
+      "additionalInfo": "",
+      "facilityId": 10018,
+      "name": null
+    },
+    {
+      "meta": {
+        "href": "/facility/equipment/43",
+        "mediaType": "application/vnd.sh-v1.0+json"
+      },
+      "equipmentDTO": {
+        "meta": {
+          "href": null,
+          "mediaType": "application/vnd.sh-v1.0+json"
+        },
+        "id": 40,
+        "modality": "X-Ray",
+        "manufacturer": "Siemens",
+        "model": "2000",
+        "yearMade": 949444671000,
+        "channels": 8,
+        "magnetStrength": 2.4,
+        "additionalInfo": "",
+        "type": "Open",
+        "tableWeight": 2000,
+        "rotationTime": 0.2,
+        "slices": 64,
+        "name": "2000"
+      },
+      "facilityEquipmentId": 43,
+      "additionalInfo": "",
+      "facilityId": 10018,
+      "name": null
+    }
+  ],
+  "facilityId": 10018
+}
+```
+
+This endpoint retrieves comprehensive equipment information about a given facility. Returns a list of objects with information for each imaging equipment, including modality, manufacturer, model, etc.
+
+### HTTP Request
+`POST https://provider.strollhealth.com/api/getEquipment`
+
+### Parameters
+Parameter | Type | Description
+--------- | ------- | -----------
+facilityId | Number | ID of facility to find equipment information for
+
+## getSimplePrices
 
 ```shell
 curl 'http://localhost:9080/api/getSimplePrices'
@@ -21,7 +1040,7 @@ curl 'http://localhost:9080/api/getSimplePrices'
 
 >Example Response:
 
-```shell
+```json
 {
     "meta": {
         "href": "/prices",
@@ -109,12 +1128,7 @@ Gets a list of Radiology facilities
 
 Parameter | Type | Description
 --------- | ------- | -----------
-Results Request DTO| Object | A data transfer object holds all the parameters in a single object.
-
-
-ResultsRequestDTO Parameter | Type | Description
---------- | ------- | -----------
-Bilateral| Boolean | Indicates if the procedure is bilateral.
+Bilateral| Number | Indicates if the procedure is bilateral. 1 if true, 0 if false.
 CPT Code Id | String | Identifies the type of procedure.
 User Id | Number | Id for logged in users.
 Lat | Number | User's Latitude position.
@@ -126,8 +1140,6 @@ Pricing Exception | String | If needed with CPT code, this indicates what possib
 Quantity | Number | ??
 
 ## getZipCoords
-
->Example Request:
 
 ```shell
 curl 'https://patient-dev.strollhealth.com/api/getZipCoords'
@@ -145,7 +1157,7 @@ curl 'https://patient-dev.strollhealth.com/api/getZipCoords'
 
 >Example Response:
 
-```shell
+```json
 {
   "id": 28425,
   "zip": "94109",
@@ -158,7 +1170,7 @@ curl 'https://patient-dev.strollhealth.com/api/getZipCoords'
 This endpoint returns the geographical coordinates (latitude and longitude) for a given valid zip code.
 
 ### HTTP Request
-`POST /api/getZipCoords`
+`POST https://findcare.strollhealth.com/api/getZipCoords`
 
 ### Parameters
 Parameter | Type | Description
@@ -166,8 +1178,6 @@ Parameter | Type | Description
 zipCode | String | Zip code for desired coordinates
 
 ## getSpecialists
-
->Example Request:
 
 ```shell
 curl 'https://patient-dev.strollhealth.com/api/getSpecialists'
@@ -187,7 +1197,7 @@ curl 'https://patient-dev.strollhealth.com/api/getSpecialists'
 
 >Example Response:
 
-```shell
+```json
 {
   "meta": {
     "data_type": "array",
@@ -780,7 +1790,7 @@ curl 'https://patient-dev.strollhealth.com/api/getSpecialists'
 This endpoint is a wrapper for BetterDoctor's Doctor Search API, returning up to 20 profiles of doctors who match the given specialty and location in the request.
 
 ### HTTP Request
-`POST /api/getSpecialists`
+`POST https://findcare.strollhealth.com/api/getSpecialists`
 
 ### Parameters
 
