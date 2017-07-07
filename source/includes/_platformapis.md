@@ -270,248 +270,7 @@ curl 'https://provider-dev.strollhealth.com/api/faxrequests'
       "sendFaxToClaimsAdministrator": false,
       "sendFaxToClaimsAdministratorCompany": false
     },
-    {
-      "meta": {
-        "href": "http://localhost:9090/sh/pendingFaxRequests/3495",
-        "mediaType": "application/vnd.sh-v1.0+json"
-      },
-      "id": 3495,
-      "faxRequestId": 3495,
-      "appointment": {
-        "meta": {
-          "href": null,
-          "mediaType": "application/vnd.sh-v1.0+json"
-        },
-        "appointmentId": 2741,
-        "equipmentId": 0,
-        "patientId": 7106,
-        "facilityId": 456,
-        "faxRequestId": 3495,
-        "startTime": 28800000,
-        "endTime": 28800000,
-        "cptCode": "76604",
-        "cost": 160,
-        "reasonNotYetScheduled": "N/A",
-        "stillWantToSchedule": true,
-        "orderStatus": "PENDING_AUTH",
-        "patientDTO": {
-          "meta": {
-            "href": null,
-            "mediaType": "application/vnd.sh-v1.0+json"
-          },
-          "id": 7106,
-          "autopilotContactId": "person_DF3613F6-A675-4E4C-AA81-90D0D1C6779B",
-          "firstName": "Don",
-          "lastName": "Sun",
-          "birthDate": "1996-05-26 00:00:00.0",
-          "gender": "M",
-          "email": "don_sun@live.com",
-          "zip": "94704",
-          "paySpecDTO": {
-            "pi": null,
-            "payerName": "TIGER",
-            "mi": "dlkjfkdljflkdjfalkdjflkadjfladkf"
-          },
-          "miInvalid": false,
-          "rejectReason": null,
-          "phoneNumber": "(123) 456-7890",
-          "phoneNumberType": "Cell",
-          "agreedToTerms": true,
-          "termVersion": "1.0",
-          "linkId": "d6935749-5cbd-4fd2-af42-69b0058023d1",
-          "middleInitital": null
-        }
-      },
-      "patientId": 7106,
-      "userId": -1,
-      "practiceId": 0,
-      "patientLastName": "Sun",
-      "patientFirstName": "Don",
-      "patientEmail": "don_sun@live.com",
-      "patientPhoneNumber": "(123) 456-7890",
-      "referringPhysicianName": " ",
-      "referringPhysicianId": -1,
-      "currentFacilityId": -1,
-      "currentFacilityName": null,
-      "cptCode": "76604",
-      "facilityFaxRequestType": 1,
-      "patientFaxRequestType": 0,
-      "physicianFaxRequestType": 0,
-      "productionPatientPortal": null,
-      "sendFaxToFacility": true,
-      "sendFaxToPatient": false,
-      "sendFaxToPhysician": false,
-      "patientFaxStatus": "DELIVERED",
-      "physicianFaxStatus": "PENDING",
-      "facilityFaxStatus": "DELIVERED",
-      "lastUpdateDate": 1498154924000,
-      "createDate": 1498154924000,
-      "createDateAsString": "06-22-2017",
-      "faxDTO": {
-        "meta": {
-          "href": null,
-          "mediaType": "application/vnd.sh-v1.0+json"
-        },
-        "male_checkbox": true,
-        "female_checkbox": false,
-        "cell_checkbox": true,
-        "office_checkbox": false,
-        "home_checkbox": false,
-        "physician_portal_checkbox": false,
-        "fax_written_report_checkbox": true,
-        "fax_STAT_checkbox": false,
-        "phone_STAT_checkbox": false,
-        "phone_call_report_checkbox": true,
-        "send_CD_checkbox": false,
-        "send_patient_with_CD_checkbox": false,
-        "send_films_checkbox": false,
-        "send_patient_with_films_checkbox": false,
-        "courier_films_checkbox": false,
-        "eligibility_validated_checkbox": false,
-        "cash_alert": "Cash Pay",
-        "mammogram": null,
-        "dob": "Invalid date",
-        "plan": null,
-        "referring_physician_NPI": " ",
-        "referring_physician_name": " ",
-        "insurance_carrier": "Self",
-        "estimate_out_of_pocket_cost": "$160.00",
-        "cpt_code": "76604",
-        "member_ID": "",
-        "facility_fax": "(844) 787-6555",
-        "referring_physician_fax": "(844) 787-6555",
-        "facility_name": "Norcal Imaging Oakland",
-        "facility_address_1": "3200 Telegraph Avenue",
-        "facility_address_2": "Oakland",
-        "facility_address_3": "CA 94609",
-        "facility_phone": "(312) 3-",
-        "referral_ID": null,
-        "patient_name": "Don Sun",
-        "pregnant_checkbox": false,
-        "patient_phone_number": "(123) 456-7890",
-        "primary_language": "",
-        "verified_eligibility_date": "",
-        "received_prior_auth_checkbox": false,
-        "prior_auth_number": "",
-        "good_until_date": "",
-        "service_type": null,
-        "in_network_copay": "",
-        "in_network_coinsurance": "",
-        "in_network_single_maximum_total": "",
-        "in_network_single_maximum_remaining": "",
-        "in_network_single_deductible_total": "",
-        "in_network_single_deductible_remaining": "",
-        "in_network_family_maximum_total": "",
-        "in_network_family_maximum_remaining": "",
-        "in_network_family_deductible_total": "",
-        "in_network_family_deductible_remaining": "",
-        "out_network_copay": "",
-        "out_network_coinsurance": "",
-        "out_network_single_maximum_remaining": "",
-        "out_network_single_deductible_remaining": "",
-        "out_network_single_deductible_total": "",
-        "out_network_single_maximum_total": "",
-        "out_network_family_maximum_total": "",
-        "out_network_family_maximum_remaining": "",
-        "out_network_family_deductible_total": "",
-        "out_network_family_deductible_remaining": "",
-        "referring_physician_phone": " ",
-        "referring_physician_address": "2150 Shattuck Ave PH, Berkeley, CA 94704",
-        "physician_portal_url": "",
-        "courier_films_to_name": "",
-        "courier_films_to_address": "",
-        "procedure_short_description": "Ultrasound Chest",
-        "icd10_code": "",
-        "comparison_study_checkbox": false,
-        "clinical_indication": "patient will bring doctor's referral",
-        "special_instructions": "",
-        "medication_provided_checkbox": false,
-        "medication_provided_description": "",
-        "procedure_locations": "",
-        "previous_MRIMRA_checkbox": false,
-        "symptom_onset_date": "",
-        "claustrophobic_checkbox": false,
-        "pacemaker_checkbox": false,
-        "pacemaker_description": "",
-        "other_implanted_metal_checkbox": false,
-        "other_implanted_metal_description": "",
-        "iv_contrast_allergy_checkbox": false,
-        "creatinine": "",
-        "iv_contrast_allergy_description": "",
-        "oral_contrast_allergy_checkbox": false,
-        "oral_contrast_allergy_description": "",
-        "renal_disease_checkbox": false,
-        "diabetes_checkbox": false,
-        "other_allergies_checkbox": false,
-        "other_allergies_description": "",
-        "previous_MRIMRA_date": "",
-        "creatinine_date": "",
-        "taking_metformin_checkbox": false,
-        "referral_date": "2017-06-22",
-        "referring_physician_signature": "no signature"
-      },
-      "costsDTO": {
-        "meta": {
-          "href": null,
-          "mediaType": "application/vnd.sh-v1.0+json"
-        },
-        "costDTOs": [],
-        "insuranceDTO": {
-          "patientId": null,
-          "serviceType": null,
-          "deductDate": null,
-          "plan": null,
-          "payerId": null,
-          "payer": null,
-          "inIndividDeductTotal": 0,
-          "outIndividDeductTotal": 0,
-          "inIndividDeductRemain": 0,
-          "outIndividDeductRemain": 0,
-          "inFamilyDeductTotal": 0,
-          "outFamilyDeductTotal": 0,
-          "inFamilyDeductRemain": 0,
-          "outFamilyDeductRemain": 0,
-          "inIndividMaxTotal": 0,
-          "outIndividMaxTotal": 0,
-          "inIndividMaxRemain": 0,
-          "outIndividMaxRemain": 0,
-          "inFamilyMaxTotal": 0,
-          "outFamilyMaxTotal": 0,
-          "inFamilyMaxRemain": 0,
-          "outFamilyMaxRemain": 0,
-          "incopay": 0,
-          "incopayOutpatient": 0,
-          "outcopay": 0,
-          "incoinsurance": 0,
-          "outcoinsurance": 0,
-          "tier1Deduct": 0,
-          "tier1FamilyDeduct": 0,
-          "tier1Remain": 0,
-          "tier1FamilyRemain": 0,
-          "tier1MaxDeduct": 0,
-          "tier1FamilyMaxDeduct": 0,
-          "tier1MaxRemain": 0,
-          "tier1FamilyMaxRemain": 0,
-          "tier1Copay": 0,
-          "tier1Coinsurance": 0
-        },
-        "notes": null,
-        "simpleOpeningsByFacIds": null
-      },
-      "rfaPhysicianFaxRequestType": "0",
-      "pr2PhysicianFaxRequestType": "0",
-      "pr2FaxDTO": null,
-      "rfaFaxDTO": null,
-      "imageDTO": null,
-      "partner": null,
-      "chosenFacilityId": null,
-      "appointmentStart": null,
-      "appointmentEnd": null,
-      "cancelReasons": null,
-      "cancelNotes": null,
-      "sendFaxToClaimsAdministrator": false,
-      "sendFaxToClaimsAdministratorCompany": false
-    }
+    ...More...
   ],
   "dayTotalCount": 2,
   "dayTotals": [
@@ -523,14 +282,7 @@ curl 'https://provider-dev.strollhealth.com/api/faxrequests'
       "date": "06-22-2017",
       "total": 1
     },
-    {
-      "meta": {
-        "href": null,
-        "mediaType": "application/vnd.sh-v1.0+json"
-      },
-      "date": "06-30-2017",
-      "total": 1
-    }
+    ...More...
   ]
 }
 ```
@@ -948,64 +700,7 @@ curl 'https://provider-qa.strollhealth.com/api/getEquipment'
       "facilityId": 10018,
       "name": null
     },
-    {
-      "meta": {
-        "href": "/facility/equipment/32",
-        "mediaType": "application/vnd.sh-v1.0+json"
-      },
-      "equipmentDTO": {
-        "meta": {
-          "href": null,
-          "mediaType": "application/vnd.sh-v1.0+json"
-        },
-        "id": 32,
-        "modality": "Ultrasound",
-        "manufacturer": "Siemens",
-        "model": "S2020",
-        "yearMade": 949454259000,
-        "channels": 8,
-        "magnetStrength": 2.4,
-        "additionalInfo": "",
-        "type": "Open",
-        "tableWeight": 2900,
-        "rotationTime": 0.2,
-        "slices": 32,
-        "name": "S2020"
-      },
-      "facilityEquipmentId": 32,
-      "additionalInfo": "",
-      "facilityId": 10018,
-      "name": null
-    },
-    {
-      "meta": {
-        "href": "/facility/equipment/43",
-        "mediaType": "application/vnd.sh-v1.0+json"
-      },
-      "equipmentDTO": {
-        "meta": {
-          "href": null,
-          "mediaType": "application/vnd.sh-v1.0+json"
-        },
-        "id": 40,
-        "modality": "X-Ray",
-        "manufacturer": "Siemens",
-        "model": "2000",
-        "yearMade": 949444671000,
-        "channels": 8,
-        "magnetStrength": 2.4,
-        "additionalInfo": "",
-        "type": "Open",
-        "tableWeight": 2000,
-        "rotationTime": 0.2,
-        "slices": 64,
-        "name": "2000"
-      },
-      "facilityEquipmentId": 43,
-      "additionalInfo": "",
-      "facilityId": 10018,
-      "name": null
-    }
+    ...More...
   ],
   "facilityId": 10018
 }
@@ -1192,7 +887,8 @@ curl 'https://patient-dev.strollhealth.com/api/getSpecialists'
 -H 'authority: patient-dev.strollhealth.com'
 --data-binary
 '{"lat":41.409,"lng":-73.24263,"specialty":"cardiopulmonary-physical-therapist"
-,"sort":"distance-asc"}' --compressed
+,"sort":"distance-asc"}'
+--compressed
 ```
 
 >Example Response:
@@ -1230,22 +926,7 @@ curl 'https://patient-dev.strollhealth.com/api/getSpecialists'
             "cigna-cignappo",
             "aetna-aetnamanagedchoiceposopenaccess",
             "multiplan-multiplanppo",
-            "bcbsbluecard-bcbsbluecardppo",
-            "empirebcbs-empireprismepobluepriority",
-            "aetna-aetnahmo",
-            "harvardpilgrim-harvardpilgrimppo",
-            "aetna-aetnaelectchoiceepo",
-            "multiplan-phcsppo",
-            "empirebcbs-empireppo",
-            "magnacare-magnacareppo",
-            "empirebcbs-empirehmo",
-            "aetna-aetnasignatureadministratorsppo",
-            "gwhcigna-greatwestppo",
-            "unitedhealthcare-uhcchoicepluspos",
-            "unitedhealthcare-uhcnavigatehmo",
-            "unitedhealthcare-uhcnavigatepos",
-            "unitedhealthcare-uhcoptionsppo",
-            "mvphealthplan-mvppreferredppo"
+            ...More...
           ],
           "visit_address": {
             "city": "Southold",
@@ -1328,318 +1009,7 @@ curl 'https://patient-dev.strollhealth.com/api/getSpecialists'
             "name": "Aetna"
           }
         },
-        {
-          "insurance_plan": {
-            "uid": "cigna-cignaopenaccessplus",
-            "name": "CIGNA Open Access Plus",
-            "category": [
-              "medical"
-            ]
-          },
-          "insurance_provider": {
-            "uid": "cigna",
-            "name": "Cigna"
-          }
-        },
-        {
-          "insurance_plan": {
-            "uid": "cigna-cignahmo",
-            "name": "CIGNA HMO",
-            "category": [
-              "medical"
-            ]
-          },
-          "insurance_provider": {
-            "uid": "cigna",
-            "name": "Cigna"
-          }
-        },
-        {
-          "insurance_plan": {
-            "uid": "capitaldistrictphysicianshealthplan-cdphpppo",
-            "name": "CDPHP PPO",
-            "category": [
-              "medical"
-            ]
-          },
-          "insurance_provider": {
-            "uid": "capitaldistrictphysicianshealthplan",
-            "name": "Capital District Physicians Health Plan"
-          }
-        },
-        {
-          "insurance_plan": {
-            "uid": "anthem-anthemppocenturypreferredct",
-            "name": "Anthem PPO Century Preferred - CT",
-            "category": [
-              "medical"
-            ]
-          },
-          "insurance_provider": {
-            "uid": "anthem",
-            "name": "Anthem"
-          }
-        },
-        {
-          "insurance_plan": {
-            "uid": "empirebcbs-empirepathwayenhancedguidedaccess",
-            "name": "Empire Pathway Enhanced Guided Access",
-            "category": [
-              "medical"
-            ]
-          },
-          "insurance_provider": {
-            "uid": "empirebcbs",
-            "name": "Empire BCBS"
-          }
-        },
-        {
-          "insurance_plan": {
-            "uid": "cigna-cignappo",
-            "name": "CIGNA PPO",
-            "category": [
-              "medical"
-            ]
-          },
-          "insurance_provider": {
-            "uid": "cigna",
-            "name": "Cigna"
-          }
-        },
-        {
-          "insurance_plan": {
-            "uid": "aetna-aetnamanagedchoiceposopenaccess",
-            "name": "Aetna Managed Choice POS Open Access",
-            "category": [
-              "medical"
-            ]
-          },
-          "insurance_provider": {
-            "uid": "aetna",
-            "name": "Aetna"
-          }
-        },
-        {
-          "insurance_plan": {
-            "uid": "multiplan-multiplanppo",
-            "name": "Multiplan PPO",
-            "category": [
-              "medical"
-            ]
-          },
-          "insurance_provider": {
-            "uid": "multiplan",
-            "name": "Multiplan"
-          }
-        },
-        {
-          "insurance_plan": {
-            "uid": "bcbsbluecard-bcbsbluecardppo",
-            "name": "BCBS Blue Card PPO",
-            "category": [
-              "medical"
-            ]
-          },
-          "insurance_provider": {
-            "uid": "bcbsbluecard",
-            "name": "BCBS Blue Card"
-          }
-        },
-        {
-          "insurance_plan": {
-            "uid": "empirebcbs-empireprismepobluepriority",
-            "name": "Empire Prism EPO - Blue Priority",
-            "category": [
-              "medical"
-            ]
-          },
-          "insurance_provider": {
-            "uid": "empirebcbs",
-            "name": "Empire BCBS"
-          }
-        },
-        {
-          "insurance_plan": {
-            "uid": "aetna-aetnahmo",
-            "name": "Aetna HMO",
-            "category": [
-              "medical"
-            ]
-          },
-          "insurance_provider": {
-            "uid": "aetna",
-            "name": "Aetna"
-          }
-        },
-        {
-          "insurance_plan": {
-            "uid": "harvardpilgrim-harvardpilgrimppo",
-            "name": "Harvard Pilgrim PPO",
-            "category": [
-              "medical"
-            ]
-          },
-          "insurance_provider": {
-            "uid": "harvardpilgrim",
-            "name": "Harvard Pilgrim"
-          }
-        },
-        {
-          "insurance_plan": {
-            "uid": "aetna-aetnaelectchoiceepo",
-            "name": "Aetna Elect Choice EPO",
-            "category": [
-              "medical"
-            ]
-          },
-          "insurance_provider": {
-            "uid": "aetna",
-            "name": "Aetna"
-          }
-        },
-        {
-          "insurance_plan": {
-            "uid": "multiplan-phcsppo",
-            "name": "PHCS PPO",
-            "category": [
-              "medical"
-            ]
-          },
-          "insurance_provider": {
-            "uid": "multiplan",
-            "name": "Multiplan"
-          }
-        },
-        {
-          "insurance_plan": {
-            "uid": "empirebcbs-empireppo",
-            "name": "Empire PPO",
-            "category": [
-              "medical"
-            ]
-          },
-          "insurance_provider": {
-            "uid": "empirebcbs",
-            "name": "Empire BCBS"
-          }
-        },
-        {
-          "insurance_plan": {
-            "uid": "magnacare-magnacareppo",
-            "name": "MagnaCare PPO",
-            "category": [
-              "medical"
-            ]
-          },
-          "insurance_provider": {
-            "uid": "magnacare",
-            "name": "MagnaCare"
-          }
-        },
-        {
-          "insurance_plan": {
-            "uid": "empirebcbs-empirehmo",
-            "name": "Empire HMO",
-            "category": [
-              "medical"
-            ]
-          },
-          "insurance_provider": {
-            "uid": "empirebcbs",
-            "name": "Empire BCBS"
-          }
-        },
-        {
-          "insurance_plan": {
-            "uid": "aetna-aetnasignatureadministratorsppo",
-            "name": "Aetna Signature Administrators PPO",
-            "category": [
-              "medical"
-            ]
-          },
-          "insurance_provider": {
-            "uid": "aetna",
-            "name": "Aetna"
-          }
-        },
-        {
-          "insurance_plan": {
-            "uid": "gwhcigna-greatwestppo",
-            "name": "Great West PPO",
-            "category": [
-              "medical"
-            ]
-          },
-          "insurance_provider": {
-            "uid": "gwhcigna",
-            "name": "GWH-Cigna"
-          }
-        },
-        {
-          "insurance_plan": {
-            "uid": "unitedhealthcare-uhcchoicepluspos",
-            "name": "UHC Choice Plus POS",
-            "category": [
-              "medical"
-            ]
-          },
-          "insurance_provider": {
-            "uid": "unitedhealthcare",
-            "name": "United Healthcare"
-          }
-        },
-        {
-          "insurance_plan": {
-            "uid": "unitedhealthcare-uhcnavigatehmo",
-            "name": "UHC Navigate HMO",
-            "category": [
-              "medical"
-            ]
-          },
-          "insurance_provider": {
-            "uid": "unitedhealthcare",
-            "name": "United Healthcare"
-          }
-        },
-        {
-          "insurance_plan": {
-            "uid": "unitedhealthcare-uhcnavigatepos",
-            "name": "UHC Navigate POS",
-            "category": [
-              "medical"
-            ]
-          },
-          "insurance_provider": {
-            "uid": "unitedhealthcare",
-            "name": "United Healthcare"
-          }
-        },
-        {
-          "insurance_plan": {
-            "uid": "unitedhealthcare-uhcoptionsppo",
-            "name": "UHC Options PPO",
-            "category": [
-              "medical"
-            ]
-          },
-          "insurance_provider": {
-            "uid": "unitedhealthcare",
-            "name": "United Healthcare"
-          }
-        },
-        {
-          "insurance_plan": {
-            "uid": "mvphealthplan-mvppreferredppo",
-            "name": "MVP Preferred PPO",
-            "category": [
-              "medical"
-            ]
-          },
-          "insurance_provider": {
-            "uid": "mvphealthplan",
-            "name": "MVP Health Plan"
-          }
-        }
+        ...More...
       ],
       "specialties": [
         {
@@ -1658,38 +1028,7 @@ curl 'https://patient-dev.strollhealth.com/api/getSpecialists'
           "actor": "Cardiopulmonary Physical Therapist",
           "actors": "Cardiopulmonary Physical Therapists"
         },
-        {
-          "uid": "geriatric-physical-therapist",
-          "name": "Geriatrics Physical Therapy",
-          "description": "Specializes in physical therapy for the elderly.",
-          "category": "medical",
-          "actor": "Geriatric Physical Therapist",
-          "actors": "Geriatric Physical Therapists"
-        },
-        {
-          "uid": "neurology-physical-therapist",
-          "name": "Neurology Physical Therapy",
-          "description": "Specializes in nervous system physical therapy.",
-          "category": "medical",
-          "actor": "Neurology Physical Therapist",
-          "actors": "Neurology Physical Therapists"
-        },
-        {
-          "uid": "pediatric-physical-therapist",
-          "name": "Pediatric Physical Therapy",
-          "description": "Specializes in children's physical therapy.",
-          "category": "medical",
-          "actor": "Pediatrics Physical Therapist",
-          "actors": "Pediatrics Physical Therapists"
-        },
-        {
-          "uid": "orthopedic-physical-therapist",
-          "name": "Orthopedic Physical Therapy",
-          "description": "Specializes in physical therapy of joints and muscles.",
-          "category": "medical",
-          "actor": "Orthopedic Physical Therapist",
-          "actors": "Orthopedic Physical Therapists"
-        }
+        ...More...
       ],
       "claims": [
         {
@@ -1710,69 +1049,7 @@ curl 'https://patient-dev.strollhealth.com/api/getSpecialists'
           "avg_charge_amt": 39.681528222,
           "avg_payment_amt": 27.772539936
         },
-        {
-          "hcpcs": "97140",
-          "hcpcs_description": "Manual therapy",
-          "service_cnt": 1738,
-          "bene_uniq_cnt": 157,
-          "avg_allowed_amt": 29.096403913,
-          "avg_charge_amt": 35.276104718,
-          "avg_payment_amt": 23.138365938
-        },
-        {
-          "hcpcs": "G0283",
-          "hcpcs_description": "Electrical stimulation (unattended), one or more areas, not wound care, as part of a therapy",
-          "service_cnt": 723,
-          "bene_uniq_cnt": 92,
-          "avg_allowed_amt": 13.523969571,
-          "avg_charge_amt": 16.551120332,
-          "avg_payment_amt": 10.793236515
-        },
-        {
-          "hcpcs": "97035",
-          "hcpcs_description": "Ultrasound therapy",
-          "service_cnt": 487,
-          "bene_uniq_cnt": 68,
-          "avg_allowed_amt": 12.61,
-          "avg_charge_amt": 15.03,
-          "avg_payment_amt": 10.048562628
-        },
-        {
-          "hcpcs": "97535",
-          "hcpcs_description": "Self care management training",
-          "service_cnt": 249,
-          "bene_uniq_cnt": 140,
-          "avg_allowed_amt": 35.595823293,
-          "avg_charge_amt": 41.427429719,
-          "avg_payment_amt": 27.617791165
-        },
-        {
-          "hcpcs": "97001",
-          "hcpcs_description": "Physical therapy evaluation",
-          "service_cnt": 177,
-          "bene_uniq_cnt": 154,
-          "avg_allowed_amt": 82.525988701,
-          "avg_charge_amt": 90.46920904,
-          "avg_payment_amt": 60.537062147
-        },
-        {
-          "hcpcs": "97530",
-          "hcpcs_description": "Therapeutic activities",
-          "service_cnt": 65,
-          "bene_uniq_cnt": 14,
-          "avg_allowed_amt": 35.460923077,
-          "avg_charge_amt": 42.04,
-          "avg_payment_amt": 28.368923077
-        },
-        {
-          "hcpcs": "97002",
-          "hcpcs_description": "Physical therapy re-evaluation",
-          "service_cnt": 16,
-          "bene_uniq_cnt": 15,
-          "avg_allowed_amt": 46.41,
-          "avg_charge_amt": 50.7,
-          "avg_payment_amt": 34.809375
-        }
+        ...More...
       ],
       "licenses": [
         {
@@ -1800,3 +1077,110 @@ lat | Number | Search location latitude
 lng | Number | Search location longitude
 sort| String | Sort algorithm
 specialty | String | Desired specialty
+
+## getDrugList
+
+```shell
+curl 'https://patient-dev.strollhealth.com/api/getDrugList'
+-H 'if-none-match: W/"1c095-VIDumywPrjdPlLwFZJSAr3BPbx8"'
+-H 'accept-encoding: gzip, deflate, sdch, br'
+-H 'x-requested-with: XMLHttpRequest'
+-H 'accept-language: en-US,en;q=0.8'
+-H 'authorization: Basic bXktdHJ1c3RlZC1jbGllbnQxOg=='
+-H 'content-type: application/json'
+-H 'accept: application/json, text/javascript, */*; q=0.01'
+-H 'referer: https://patient-dev.strollhealth.com/'
+-H 'authority: patient-dev.strollhealth.com' --compressed
+```
+
+> Example Response (First 3 entries)
+
+```json
+[
+  {
+    "genericName": "Aripiprazole",
+    "brandName": "Abilify",
+    "comboName": "Abilify (Aripiprazole)"
+  },
+  {
+    "genericName": "acamprosate",
+    "brandName": "Campral",
+    "comboName": "Campral (acamprosate)"
+  },
+  {
+    "genericName": "zafirlukast",
+    "brandName": "Accolate",
+    "comboName": "Accolate (zafirlukast)"
+  }
+]
+```
+
+This endpoint fetches the list of all drugs supported in Stroll's prescription portal, also corresponding to the list of drugs supported by Iodine.
+
+### HTTP Request
+`GET https://findcare.strollhealth.com/api/getDrugList`
+
+## fetchPlans
+
+```shell
+curl 'https://patient-dev.strollhealth.com/api/getPlans'
+-H 'if-none-match: W/"14111-TElwmDr+z6BVi7FGFMo1JX+CXCo"'
+-H 'accept-encoding: gzip, deflate, sdch, br'
+-H 'x-requested-with: XMLHttpRequest'
+-H 'accept-language: en-US,en;q=0.8'
+-H 'authorization: Basic bXktdHJ1c3RlZC1jbGllbnQxOg=='
+-H 'accept: application/json, text/javascript, */*; q=0.01'
+-H 'referer: https://patient-dev.strollhealth.com/procedure_search'
+-H 'authority: patient-dev.strollhealth.com'
+-H 'contenttype: application/json'
+--compressed
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "6": [
+        {
+            "meta": null,
+            "id": 433,
+            "plan": "CDHP",
+            "payerId": 6,
+            "planType": "PPO",
+            "medicare": false
+        }
+    ],
+    "50": [
+        {
+            "meta": null,
+            "id": 186,
+            "plan": "BRONZE FULL PPO HSA 3500",
+            "payerId": 50,
+            "planType": "PPO",
+            "medicare": false
+        },
+        {
+            "meta": null,
+            "id": 187,
+            "plan": "SILVER 73 EPO",
+            "payerId": 50,
+            "planType": "EPO",
+            "medicare": false
+        },
+        {
+            "meta": null,
+            "id": 188,
+            "plan": "ACCESS+ HMO SAVENET",
+            "payerId": 50,
+            "planType": "HMO",
+            "medicare": false
+        }
+        ... more ...
+    ]
+    ... more ...
+}
+```
+
+This endpoint gets all the insurance plans.
+### HTTP Request
+`GET https://patient-qa.strollhealth.com/api/getPlans`
