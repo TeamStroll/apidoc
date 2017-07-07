@@ -2,16 +2,6 @@
 
 ## Post Fax Request
 
-This call takes a FaxRequest JSON object (FaxRequestDTO) as input and does 3 things with it:
-
-1.   First, it registers a new appointment in the database for the given patient at the given facility with an order status of "ORDERED", meaning the appointment has yet to be confirmed or scheduled.
-
-2.   Second, it sends the fax order to the physician, patient, and/or claims administrator if indicated in the JSON object.
-
-3.   Third, it starts sending the patient check-in emails through the email service Autopilot.
-
-Finally, after these are done, it returns a response JSON object containing the fully updated fax request stored in the Stroll database.
-
 ```shell
 curl --include \
      --header "Accept: application/vnd.sh-v1.0+json" \
@@ -362,6 +352,17 @@ curl --include \
   "sendFaxToClaimsAdministratorCompany": false
 }
 ```
+
+This call takes a FaxRequest JSON object (FaxRequestDTO) as input and does 3 things with it:
+
+1.   First, it registers a new appointment in the database for the given patient at the given facility with an order status of "ORDERED", meaning the appointment has yet to be confirmed or scheduled.
+
+2.   Second, it sends the fax order to the physician, patient, and/or claims administrator if indicated in the JSON object.
+
+3.   Third, it starts sending the patient check-in emails through the email service Autopilot.
+
+Finally, after these are done, it returns a response JSON object containing the fully updated fax request stored in the Stroll database.
+
 ### HTTP Request
 
 `POST http://localhost:9090/sh/faxrequests`
