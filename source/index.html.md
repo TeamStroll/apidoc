@@ -30,21 +30,21 @@ Welcome to the Stroll Health API!
 ```shell
 require 'stroll'
 
-api = Stroll::APIClient.authorize!('meowmeowmeow')
+api = Stroll::APIClient.authorize!('AUTH_TOKEN')
 ```
 
 
 
-> Make sure to replace `meowmeowmeow` with your API key.
+> Make sure to replace `AUTH_TOKEN` with your API key.
 
 Stroll uses OAuth2 to allow access to the API.
 
 Stroll expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
-`Authorization: meowmeowmeow`
+`Authorization: AUTH_TOKEN`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with a user's authorization token.
+You must replace <code>AUTH_TOKEN</code> with a user's authorization token.
 </aside>
 
 # User Microservice
@@ -53,7 +53,7 @@ You must replace <code>meowmeowmeow</code> with a user's authorization token.
 
 ```shell
 curl --include \
-     --header "Authorization: Bearer meowmeowmeow" \
+     --header "Authorization: Bearer AUTH_TOKEN" \
   'http://localhost:9008/user/current'
 ```
 
@@ -162,7 +162,7 @@ Remember — a happy user is an authenticated user!
 
 ```shell
 curl --include \
-     --header "Authorization: Bearer meowmeowmeow" \
+     --header "Authorization: Bearer AUTH_TOKEN" \
   'http://localhost:9008/user/sites'
 ```
 
@@ -420,8 +420,6 @@ curl --include \
 
 This endpoint retrieves all sites belonging to the current user.
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
 ### HTTP Request
 
 `GET http://localhost:9008/user/sites`
@@ -430,7 +428,7 @@ This endpoint retrieves all sites belonging to the current user.
 
 ```shell
 curl --include \
-     --header "Authorization: Bearer meowmeowmeow" \
+     --header "Authorization: Bearer AUTH_TOKEN" \
   'http://localhost:9008/user/tenants?email=jamessmith@strollhealth.com'
 ```
 
@@ -460,7 +458,7 @@ email | String | An user email
 
 ```shell
 curl --include \
-     --header "Authorization: Bearer meowmeowmeow" \
+     --header "Authorization: Bearer AUTH_TOKEN" \
   'http://localhost:9008/user/24/profile/signature'
 ```
 
@@ -492,7 +490,7 @@ userId | String | A user id for which you want to retrieve the signature
 
 ```shell
 curl --include \
-     --header "Authorization: Bearer meowmeowmeow" \
+     --header "Authorization: Bearer AUTH_TOKEN" \
   'http://localhost:9008/user/facility/some_facility/users'
 ```
 
@@ -614,7 +612,7 @@ facility_name | String | Name of the facility for which you wish to retrieve use
 
 ```shell
 curl --include \
-     --header "Authorization: Bearer meowmeowmeow" \
+     --header "Authorization: Bearer AUTH_TOKEN" \
   'http://localhost:9008/user/tenants?email=jamessmith@strollhealth.com'
 ```
 
@@ -644,17 +642,17 @@ email | String | An user email
 ## Get Quantities and Dosages of a Drug (getDrugInfo)
 
 ```shell
-curl 'https://patient-dev.strollhealth.com/api/getDrugInfo' 
--H 'origin: https://patient-dev.strollhealth.com' 
--H 'accept-encoding: gzip, deflate, br' 
--H 'x-requested-with: XMLHttpRequest' 
--H 'accept-language: en-US,en;q=0.8' 
--H 'authorization: Basic bXktdHJ1c3RlZC1jbGllbnQxOg==' 
--H 'content-type: application/json' 
--H 'accept: application/json, text/javascript, */*; q=0.01' 
--H 'referer: https://patient-dev.strollhealth.com/prescription_search' 
--H 'authority: patient-dev.strollhealth.com' 
---data-binary '{"name":"Accupril"}' 
+curl 'https://patient-dev.strollhealth.com/api/getDrugInfo'
+-H 'origin: https://patient-dev.strollhealth.com'
+-H 'accept-encoding: gzip, deflate, br'
+-H 'x-requested-with: XMLHttpRequest'
+-H 'accept-language: en-US,en;q=0.8'
+-H 'authorization: Basic bXktdHJ1c3RlZC1jbGllbnQxOg=='
+-H 'content-type: application/json'
+-H 'accept: application/json, text/javascript, */*; q=0.01'
+-H 'referer: https://patient-dev.strollhealth.com/prescription_search'
+-H 'authority: patient-dev.strollhealth.com'
+--data-binary '{"name":"Accupril"}'
 --compressed
 ```
 
@@ -713,4 +711,3 @@ This serves as a wrapper for GoodRX API and returns quantities and dosages for a
 Parameter | Type | Description
 --------- | ------- | -----------
 name | String | Name of the chosen drug
-

@@ -7,7 +7,7 @@ If the microservice that contains the endpoint is known, simply select it on the
 
 ##To run an endpoint in shell:
 
-Make sure to begin by getting a session token. You can do so by following steps in the "Authentication" section. Once a token is retrieved, use the curl command in the right section by replacing "meowmeowmeow" in the authorization header with your own token.
+Make sure to begin by getting a session token. You can do so by following steps in the "Authentication" section. Once a token is retrieved, use the curl command in the right section by replacing "AUTH_TOKEN" in the authorization header with your own token.
 
 ##To add/modify documentation:
 
