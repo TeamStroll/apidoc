@@ -1132,7 +1132,7 @@ curl 'https://provider-qa.strollhealth.com/api/addFaxRequest'
 }
 ```
 
-EXPLANATION
+Send fax order with specified fields.
 
 ### HTTP Request
 
