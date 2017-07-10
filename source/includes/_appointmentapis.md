@@ -3,15 +3,15 @@
 ## retrieveAppointments
 
 ```shell
-curl 'https://provider-qa.strollhealth.com/api/retrieveAppointments'
--H 'origin: https://provider-qa.strollhealth.com'
+curl 'https://provider.strollhealth.com/api/retrieveAppointments'
+-H 'origin: https://provider.strollhealth.com'
 -H 'accept-encoding: gzip, deflate, br'
 -H 'x-requested-with: XMLHttpRequest'
 -H 'accept-language: en-US,en;q=0.8'
 -H 'content-type: application/json'
 -H 'accept: application/json, text/javascript, */*; q=0.01'
--H 'referer: https://provider-qa.strollhealth.com/radiology_dashboard/schedule'
--H 'authority: provider-qa.strollhealth.com'
+-H 'referer: https://provider.strollhealth.com/radiology_dashboard/schedule'
+-H 'authority: provider.strollhealth.com'
 --data-binary '{"startTime":1498374000000,"endTime":1500188400000,"facilityEquipmentId":29,"facilityId":10006,"contrast":"WITHOUT"}'
 --compressed
 ```
@@ -138,16 +138,16 @@ contrast | String | Whether procedure is with or without contrast. Possible opti
 ## retrieveAllOpenings
 
 ```shell
-curl 'https://provider-qa.strollhealth.com/api/retrieveAllOpenings'
--H 'origin: https://provider-qa.strollhealth.com'
+curl 'https://provider.strollhealth.com/api/retrieveAllOpenings'
+-H 'origin: https://provider.strollhealth.com'
 -H 'accept-encoding: gzip, deflate, br'
 -H 'x-requested-with: XMLHttpRequest'
 -H 'accept-language: en-US,en;q=0.8'
 -H 'authorization: Bearer AUTH_TOKEN'
 -H 'content-type: application/json'
 -H 'accept: application/json, text/javascript, */*; q=0.01'
--H 'referer: https://provider-qa.strollhealth.com/radiology_dashboard/schedule'
--H 'authority: provider-qa.strollhealth.com'
+-H 'referer: https://provider.strollhealth.com/radiology_dashboard/schedule'
+-H 'authority: provider.strollhealth.com'
 --data-binary '{"startDate":1498374000000,"endDate":1500188400000,
 "modality":"MRI","facilityId":10006,"contrast":"WITHOUT"}'
 --compressed

@@ -3,15 +3,15 @@
 ## getFaxRequest
 
 ```shell
-curl 'https://provider-dev.strollhealth.com/api/faxrequests'
--H 'origin: https://provider-dev.strollhealth.com'
+curl 'https://provider.strollhealth.com/api/faxrequests'
+-H 'origin: https://provider.strollhealth.com'
 -H 'accept-encoding: gzip, deflate, br'
 -H 'x-requested-with: XMLHttpRequest'
 -H 'accept-language: en-US,en;q=0.8'
 -H 'authorization: Bearer AUTH_TOKEN'
 -H 'accept: application/json, text/plain, */*'
--H 'referer: https://provider-dev.strollhealth.com/radiology_orders/overview'
--H 'authority: provider-dev.strollhealth.com'
+-H 'referer: https://provider.strollhealth.com/radiology_orders/overview'
+-H 'authority: provider.strollhealth.com'
 --data-binary '{"startDate":"04-07-2017","endDate":"08-07-2017",
 "facilityIds":[456,454],"limit":40,"page":0,"userId":2}'
 --compressed
@@ -305,16 +305,16 @@ userId | Number | Unique ID corresponding to user.
 
 ## getFacilities
 ```shell
-curl 'https://provider-qa.strollhealth.com/api/search'
--H 'origin: https://provider-qa.strollhealth.com'
+curl 'https://provider.strollhealth.com/api/search'
+-H 'origin: https://provider.strollhealth.com'
 -H 'accept-encoding: gzip, deflate, br'
 -H 'x-requested-with: XMLHttpRequest'
 -H 'accept-language: en-US,en;q=0.8'
 -H 'authorization: Bearer AUTH_TOKEN'
 -H 'content-type: application/json'
 -H 'accept: application/json, text/javascript, */*; q=0.01'
--H 'referer: https://provider-qa.strollhealth.com/provider_dashboard/results'
--H 'authority: provider-qa.strollhealth.com'
+-H 'referer: https://provider.strollhealth.com/provider_dashboard/results'
+-H 'authority: provider.strollhealth.com'
 --data-binary '{"patientId":5531,"userId":1,"cptCodeIds":73701,
 "pricingException":"undefined","bilateral":1}'
 --compressed
@@ -336,7 +336,7 @@ curl 'https://provider-qa.strollhealth.com/api/search'
             "fromAddress": null,
             "facility": "PAMF - San Carlos Radiology Center",
             "address": "301 Industrial Rd, Level 1, San Carlos, CA 94070",
-            "image": "https://provider-qa.strollhealth.com/sh/images/generic_facility_image.png",
+            "image": "https://provider.strollhealth.com/sh/images/generic_facility_image.png",
             "distance": "24.8 mi",
             "phone": "548",
             "fax": "824",
@@ -363,7 +363,7 @@ curl 'https://provider-qa.strollhealth.com/api/search'
             "fromAddress": null,
             "facility": "Inview Imaging Fremont",
             "address": "39465 Paseo Padre Parkway, Suite 1000, Fremont, CA 94538",
-            "image": "https://provider-qa.strollhealth.com/sh/images/526_Inview%20Imaging%20Center.png",
+            "image": "https://provider.strollhealth.com/sh/images/526_Inview%20Imaging%20Center.png",
             "distance": "26.8 mi",
             "phone": "197",
             "fax": "198",
@@ -419,7 +419,7 @@ curl 'https://provider-qa.strollhealth.com/api/search'
 This endpoint retrieves facilities corresponding to a user and CPT code.
 
 ### HTTP Request
-`POST https://provider-qa.strollhealth.com/api/search`
+`POST https://provider.strollhealth.com/api/search`
 ### Parameters
 
 Parameter | Type | Description
@@ -434,16 +434,16 @@ quantity | Number | Number of procedures.
 ## getClinicalIndicationSuggestion
 
 ```shell
-curl 'https://provider-dev.strollhealth.com/api/getClinicalIndication'
--H 'origin: https://provider-dev.strollhealth.com'
+curl 'https://provider.strollhealth.com/api/getClinicalIndication'
+-H 'origin: https://provider.strollhealth.com'
 -H 'accept-encoding: gzip, deflate, br'
 -H 'x-requested-with: XMLHttpRequest'
 -H 'accept-language: en-US,en;q=0.8'
 -H 'authorization: Bearer AUTH_TOKEN'
 -H 'content-type: application/json'
 -H 'accept: application/json, text/javascript, */*; q=0.01'
--H 'referer: https://provider-dev.strollhealth.com/provider_dashboard/finalize_order'
--H 'authority: provider-dev.strollhealth.com'  
+-H 'referer: https://provider.strollhealth.com/provider_dashboard/finalize_order'
+-H 'authority: provider.strollhealth.com'  
 --data-binary '{"substring":"bas","limit":5}'
 --compressed
 ```
@@ -505,7 +505,7 @@ This endpoint retrieves a list of clinical indications that contain the substrin
 
 ### HTTP Request
 
-`POST https://provider-dev.strollhealth.com/api/getClinicalIndication`
+`POST https://provider.strollhealth.com/api/getClinicalIndication`
 
 ### Parameters
 
@@ -517,16 +517,16 @@ Limit | Number | The number of results shown.
 ## getRadiologyFacilities
 
 ```shell
-curl 'https://provider-dev.strollhealth.com/api/radiology/prices'
--H 'origin: https://provider-dev.strollhealth.com'
+curl 'https://provider.strollhealth.com/api/radiology/prices'
+-H 'origin: https://provider.strollhealth.com'
 -H 'accept-encoding: gzip, deflate, br'
 -H 'x-requested-with: XMLHttpRequest'
 -H 'accept-language: en-US,en;q=0.8'
 -H 'authorization: Bearer AUTH_TOKEN'
 -H 'content-type: application/json'
 -H 'accept: application/json, text/javascript, */*; q=0.01'
--H 'referer: https://provider-dev.strollhealth.com/radiology_dashboard/results'
--H 'authority: provider-dev.strollhealth.com'
+-H 'referer: https://provider.strollhealth.com/radiology_dashboard/results'
+-H 'authority: provider.strollhealth.com'
 --data-binary '{"patientId":7461,"userId":2,"cptCodeIds":77012,
 "pricingException":"undefined","bilateral":"undefined","facilityIds":[456,454]}'
 --compressed
@@ -549,7 +549,7 @@ curl 'https://provider-dev.strollhealth.com/api/radiology/prices'
       "fromAddress": null,
       "facility": "Northern California Pet Imaging",
       "address": "3195 Folsom Boulevard, Sacramento, CA 95816",
-      "image": "https://provider-dev.strollhealth.com/sh/images/454_Northern%20California%20Pet%20Imaging.png.jpg",
+      "image": "https://provider.strollhealth.com/sh/images/454_Northern%20California%20Pet%20Imaging.png.jpg",
       "distance": "74.5 mi",
       "phone": "4864",
       "fax": "9167376203",
@@ -576,7 +576,7 @@ curl 'https://provider-dev.strollhealth.com/api/radiology/prices'
       "fromAddress": null,
       "facility": "Norcal Imaging Oakland",
       "address": "3200 Telegraph Avenue, Oakland, CA 94609",
-      "image": "https://provider-dev.strollhealth.com/sh/images/456_Norcal%20Imaging%20Oakland.png",
+      "image": "https://provider.strollhealth.com/sh/images/456_Norcal%20Imaging%20Oakland.png",
       "distance": "8.7 mi",
       "phone": "3123",
       "fax": "5106631951",
@@ -620,15 +620,15 @@ userId | Number | Unique ID corresponding to user.
 ## getEquipment
 
 ```shell
-curl 'https://provider-qa.strollhealth.com/api/getEquipment'
--H 'origin: https://provider-qa.strollhealth.com'
+curl 'https://provider.strollhealth.com/api/getEquipment'
+-H 'origin: https://provider.strollhealth.com'
 -H 'accept-encoding: gzip, deflate, br'
 -H 'x-requested-with: XMLHttpRequest' -H 'accept-language: en-US,en;q=0.8'
 -H 'authorization: Bearer AUTH_TOKEN'
 -H 'content-type: application/json'
 -H 'accept: application/json, text/javascript, */*; q=0.01'
--H 'referer: https://provider-qa.strollhealth.com/radiology_dashboard/schedule'
--H 'authority: provider-qa.strollhealth.com'
+-H 'referer: https://provider.strollhealth.com/radiology_dashboard/schedule'
+-H 'authority: provider.strollhealth.com'
 --data-binary '{"facilityId":10018}'
 --compressed
 
@@ -751,7 +751,7 @@ curl 'http://localhost:9080/api/getSimplePrices'
             "fromAddress": null,
             "facility": "Pamf - San Carlos Radiology Center",
             "address": "301 Industrial Rd, Level 1, San Carlos, CA 94070",
-            "image": "https://provider-dev.strollhealth.com/sh/images/generic_facility_image.png",
+            "image": "https://provider.strollhealth.com/sh/images/generic_facility_image.png",
             "distance": "24.8 mi",
             "phone": "5426",
             "fax": "6505517039",
@@ -838,16 +838,16 @@ Quantity | Number | Number of procedures.
 ## orderFax
 
 ```shell
-curl 'https://provider-qa.strollhealth.com/api/addFaxRequest'
--H 'origin: https://provider-qa.strollhealth.com'
+curl 'https://provider.strollhealth.com/api/addFaxRequest'
+-H 'origin: https://provider.strollhealth.com'
 -H 'accept-encoding: gzip, deflate, br'
 -H 'x-requested-with: XMLHttpRequest'
 -H 'accept-language: en-US,en;q=0.8'
 -H 'authorization: Bearer AUTH_TOKEN'
 -H 'content-type: application/json'
 -H 'accept: application/json, text/plain, */*'
--H 'referer: https://provider-qa.strollhealth.com/provider_dashboard/finalize_order'
--H 'authority: provider-qa.strollhealth.com'
+-H 'referer: https://provider.strollhealth.com/provider_dashboard/finalize_order'
+-H 'authority: provider.strollhealth.com'
 --data-binary'{"sendFaxToFacility":true,"currentFacilityId":0,
 "createDateAsString":"2017-07-07","chosenFacilityId":10018,
 "patientEmail":"TunjiAli@strollhealth.com","cptCode":"73564",
@@ -1136,7 +1136,7 @@ Send fax order with specified fields.
 
 ### HTTP Request
 
-`POST https://provider-qa.strollhealth.com/api/addFaxRequest`
+`POST https://provider.strollhealth.com/api/addFaxRequest`
 
 ### Parameters
 
