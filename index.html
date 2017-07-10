@@ -1694,12 +1694,17 @@ Remember — a happy user is an authenticated user!
 <tr>
 <td>pricingException</td>
 <td>String</td>
-<td>???</td>
+<td>Pricing exception code.</td>
 </tr>
 <tr>
 <td>bilateral</td>
 <td>Number</td>
-<td>1 if the procedure is bilateral, 0 otherwise</td>
+<td>1 if the procedure is bilateral, 0 otherwise.</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>Number</td>
+<td>Number of procedures.</td>
 </tr>
 </tbody></table>
 
@@ -1921,8 +1926,8 @@ Remember — a happy user is an authenticated user!
 </tr>
 <tr>
 <td>pricingException</td>
-<td>String ?</td>
-<td>??</td>
+<td>String</td>
+<td>Pricing exception code.</td>
 </tr>
 <tr>
 <td>userId</td>
@@ -2201,7 +2206,7 @@ Remember — a happy user is an authenticated user!
 <tr>
 <td>Quantity</td>
 <td>Number</td>
-<td>??</td>
+<td>Number of procedures.</td>
 </tr>
 </tbody></table>
 
@@ -2500,7 +2505,7 @@ Remember — a happy user is an authenticated user!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>EXPLANATION</p>
+<p>Send fax order with specified fields.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
