@@ -15,3 +15,5 @@ Payer Id | Number | Unique Id corresponding to the payer.
 Plan Id | String | Unique Id corresponding to the plan.
 Pricing Exception | String | If needed with CPT code, this indicates what possible pricing exceptions are included.
 Quantity | Number | Number of procedures.
+
+
