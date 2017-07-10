@@ -834,6 +834,316 @@ Plan Id | String | Unique Id corresponding to the plan.
 Pricing Exception | String | If needed with CPT code, this indicates what possible pricing exceptions are included.
 Quantity | Number | ??
 
+## orderFax
+
+```shell
+curl 'https://provider-qa.strollhealth.com/api/addFaxRequest'
+-H 'origin: https://provider-qa.strollhealth.com'
+-H 'accept-encoding: gzip, deflate, br'
+-H 'x-requested-with: XMLHttpRequest'
+-H 'accept-language: en-US,en;q=0.8'
+-H 'authorization: Bearer meowmeowmeow'
+-H 'content-type: application/json'
+-H 'accept: application/json, text/plain, */*'
+-H 'referer: https://provider-qa.strollhealth.com/provider_dashboard/finalize_order'
+-H 'authority: provider-qa.strollhealth.com'
+--data-binary'{"sendFaxToFacility":true,"currentFacilityId":0,
+"createDateAsString":"2017-07-07","chosenFacilityId":10018,
+"patientEmail":"TunjiAli@strollhealth.com","cptCode":"73564",
+"facilityFaxRequestType":1,"physicianFaxRequestType":1,"patientFaxRequestType":0,
+"patientFirstName":"Tunji","referringPhysicianId":1,"patientId":5533,
+"patientLastName":"Ali","patientPhoneNumber":"(000) 000-0000",
+"referringPhysicianName":"James Smith, MD","sendFaxToPatient":false,
+"sendFaxToPhysician":true,"costsDTO":{},"userId":1,"practiceId":2,
+"faxDTO":{"member_ID":"","insurance_carrier":"Self","dob":"1977-02-03",
+"facility_name":"Inview Imaging Lafayette","facility_address_1":"970 Dewing Ave",
+"facility_address_2":"Suite 100","facility_address_3":"Lafayette, CA 94549",
+"facility_phone":"(770) -","facility_fax":"(844) 787-6555","patient_name":"Tunji Ali",
+"male_checkbox":false,"female_checkbox":true,"pregnant_checkbox":false,
+"patient_phone_number":"(000) 000-0000","cell_checkbox":true,"office_checkbox":false,"home_checkbox":false,
+"primary_language":"","estimate_out_of_pocket_cost":"$130.00","referring_physician_NPI":"123456",
+"referring_physician_phone":"(320) 583-3421","referring_physician_address":"Shattuck Ave 2150 Berkeley, CA",
+"referring_physician_fax":"(844) 787-6555","physician_portal_checkbox":false,"physician_portal_url":"",
+"fax_written_report_checkbox":true,"fax_STAT_checkbox":false,"phone_STAT_checkbox":false,
+"phone_call_report_checkbox":false,"send_CD_checkbox":true,"send_patient_with_CD_checkbox":true,
+"send_films_checkbox":true,"send_patient_with_films_checkbox":true,"courier_films_checkbox":false,
+"courier_films_to_name":"","courier_films_to_address":"","procedure_short_description":"X-Ray Knee, Complete",
+"cpt_code":"73564","ICD10_code":"Y9333","icd10_code":"Y9333","ICD9_code":"Y9333","icd9_code":"Y9333",
+"clinical_indication":"Activity, BASE jumping","comparison_study_checkbox":false,"medication_provided_checkbox":false,
+"medication_provided_description":"","procedure_locations":"","special_instructions":"bilateral procedure; ",
+"previous_MRIMRA_checkbox":false,"symptom_onset_date":"","claustrophobic_checkbox":false,
+"pacemaker_checkbox":false,"pacemaker_description":"","other_implanted_metal_checkbox":false,
+"other_implanted_metal_description":"","iv_contrast_allergy_checkbox":false,
+"iv_contrast_allergy_description":"","creatinine":"","oral_contrast_allergy_checkbox":false,
+"oral_contrast_allergy_description":"","renal_disease_checkbox":false,"diabetes_checkbox":false,
+"other_allergies_checkbox":false,"other_allergies_description":"","previous_MRIMRA_date":"",
+"creatinine_date":"","taking_metformin_checkbox":false,"referring_physician_name":"James Smith, MD",
+"referral_date":"2017-07-07","referring_physician_signature":"iVBORw0KGgoAAAANSUh...MORE...",
+"patientLastName":"Ali","patientFirstName":"Tunji","patientEmail":"TunjiAli@strollhealth.com",
+"userId":1,"practiceId":2,"cash_alert":"Cash Pay","prior_auth_number":"","received_prior_auth_checkbox":false},"appointment":{}}'
+--compressed
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "meta": {
+        "href": "/pendingFaxRequests/2023",
+        "mediaType": "application/vnd.sh-v1.0+json"
+    },
+    "id": 2023,
+    "faxRequestId": 2023,
+    "appointment": {
+        "meta": {
+            "href": null,
+            "mediaType": "application/vnd.sh-v1.0+json"
+        },
+        "appointmentId": 2195,
+        "equipmentId": 0,
+        "patientId": 5533,
+        "facilityId": 10018,
+        "faxRequestId": 2023,
+        "startTime": 28800000,
+        "endTime": 28800000,
+        "cptCode": "73564",
+        "cost": 130,
+        "reasonNotYetScheduled": "N/A",
+        "stillWantToSchedule": true,
+        "orderStatus": "PENDING_AUTH",
+        "patientDTO": {
+            "meta": {
+                "href": null,
+                "mediaType": "application/vnd.sh-v1.0+json"
+            },
+            "id": 5533,
+            "autopilotContactId": "person_564BB54C-672D-4ECE-BA4D-128D86BA9819",
+            "firstName": "Tunji",
+            "lastName": "Ali",
+            "birthDate": "1977-02-03 00:00:00.0",
+            "gender": "",
+            "email": "TunjiAli@strollhealth.com",
+            "zip": "94109",
+            "paySpecDTO": {
+                "pi": "-1",
+                "payerName": "Self",
+                "mi": ""
+            },
+            "miInvalid": false,
+            "rejectReason": null,
+            "phoneNumber": "(000) 000-0000",
+            "phoneNumberType": "Cell",
+            "agreedToTerms": true,
+            "termVersion": "1.0",
+            "linkId": "a11596f2-4b65-4be0-9e5a-e8643d320ae3",
+            "middleInitital": null
+        }
+    },
+    "patientId": 5533,
+    "userId": 1,
+    "practiceId": 0,
+    "patientLastName": "Ali",
+    "patientFirstName": "Tunji",
+    "patientEmail": "TunjiAli@strollhealth.com",
+    "patientPhoneNumber": "(000) 000-0000",
+    "referringPhysicianName": "James Smith, MD",
+    "referringPhysicianId": -1,
+    "currentFacilityId": -1,
+    "currentFacilityName": null,
+    "cptCode": "73564",
+    "facilityFaxRequestType": 1,
+    "patientFaxRequestType": 0,
+    "physicianFaxRequestType": 1,
+    "productionPatientPortal": null,
+    "sendFaxToFacility": true,
+    "sendFaxToPatient": false,
+    "sendFaxToPhysician": true,
+    "patientFaxStatus": "PENDING",
+    "physicianFaxStatus": "PENDING",
+    "facilityFaxStatus": "PENDING",
+    "lastUpdateDate": 1499452540131,
+    "createDate": 1499452540131,
+    "createDateAsString": "07-07-2017",
+    "faxDTO": {
+        "meta": {
+            "href": null,
+            "mediaType": "application/vnd.sh-v1.0+json"
+        },
+        "male_checkbox": false,
+        "female_checkbox": true,
+        "cell_checkbox": true,
+        "office_checkbox": false,
+        "home_checkbox": false,
+        "physician_portal_checkbox": false,
+        "fax_written_report_checkbox": true,
+        "fax_STAT_checkbox": false,
+        "phone_STAT_checkbox": false,
+        "phone_call_report_checkbox": false,
+        "send_CD_checkbox": true,
+        "send_patient_with_CD_checkbox": true,
+        "send_films_checkbox": true,
+        "send_patient_with_films_checkbox": true,
+        "courier_films_checkbox": false,
+        "eligibility_validated_checkbox": false,
+        "cash_alert": "Cash Pay",
+        "mammogram": null,
+        "referring_physician_NPI": "123456",
+        "referring_physician_name": "James Smith, MD",
+        "plan": null,
+        "insurance_carrier": "Self",
+        "estimate_out_of_pocket_cost": "$130.00",
+        "cpt_code": "73564",
+        "dob": "1977-02-03",
+        "facility_fax": "(844) 787-6555",
+        "referring_physician_fax": "(844) 787-6555",
+        "prior_auth_number": "",
+        "good_until_date": "",
+        "service_type": null,
+        "in_network_copay": "",
+        "in_network_coinsurance": "",
+        "in_network_single_maximum_total": "",
+        "in_network_single_maximum_remaining": "",
+        "in_network_single_deductible_total": "",
+        "in_network_single_deductible_remaining": "",
+        "in_network_family_maximum_total": "",
+        "in_network_family_maximum_remaining": "",
+        "in_network_family_deductible_total": "",
+        "in_network_family_deductible_remaining": "",
+        "out_network_copay": "",
+        "out_network_coinsurance": "",
+        "out_network_single_maximum_remaining": "",
+        "out_network_single_deductible_remaining": "",
+        "out_network_single_deductible_total": "",
+        "out_network_single_maximum_total": "",
+        "out_network_family_maximum_total": "",
+        "out_network_family_maximum_remaining": "",
+        "out_network_family_deductible_total": "",
+        "out_network_family_deductible_remaining": "",
+        "referring_physician_phone": "(320) 583-3421",
+        "referring_physician_address": "Shattuck Ave 2150 Berkeley, CA",
+        "physician_portal_url": "",
+        "courier_films_to_name": "",
+        "courier_films_to_address": "",
+        "procedure_short_description": "X-Ray Knee, Complete",
+        "icd10_code": "Y9333",
+        "comparison_study_checkbox": false,
+        "clinical_indication": "Activity, BASE jumping",
+        "special_instructions": "bilateral procedure; ",
+        "medication_provided_checkbox": false,
+        "medication_provided_description": "",
+        "procedure_locations": "",
+        "previous_MRIMRA_checkbox": false,
+        "symptom_onset_date": "",
+        "claustrophobic_checkbox": false,
+        "pacemaker_checkbox": false,
+        "pacemaker_description": "",
+        "other_implanted_metal_checkbox": false,
+        "other_implanted_metal_description": "",
+        "iv_contrast_allergy_checkbox": false,
+        "creatinine": "",
+        "iv_contrast_allergy_description": "",
+        "oral_contrast_allergy_checkbox": false,
+        "oral_contrast_allergy_description": "",
+        "renal_disease_checkbox": false,
+        "diabetes_checkbox": false,
+        "other_allergies_checkbox": false,
+        "other_allergies_description": "",
+        "previous_MRIMRA_date": "",
+        "creatinine_date": "",
+        "taking_metformin_checkbox": false,
+        "referral_date": "2017-07-07",
+        "referring_physician_signature": "iVBORw0KGgoAAAANSUh...MORE...",
+        "facility_name": "Inview Imaging Lafayette",
+        "facility_address_1": "970 Dewing Ave",
+        "facility_address_2": "Suite 100",
+        "facility_address_3": "Lafayette, CA 94549",
+        "facility_phone": "(770) -",
+        "referral_ID": null,
+        "patient_name": "Tunji Ali",
+        "pregnant_checkbox": false,
+        "patient_phone_number": "(000) 000-0000",
+        "primary_language": "",
+        "member_ID": "",
+        "verified_eligibility_date": "",
+        "received_prior_auth_checkbox": false
+    },
+    "costsDTO": {
+        "meta": {
+            "href": null,
+            "mediaType": "application/vnd.sh-v1.0+json"
+        },
+        "costDTOs": [],
+        "insuranceDTO": {
+            "patientId": null,
+            "serviceType": null,
+            "deductDate": null,
+            "plan": null,
+            "payerId": null,
+            "payer": null,
+            "inIndividDeductTotal": 0,
+            "outIndividDeductTotal": 0,
+            "inIndividDeductRemain": 0,
+            "outIndividDeductRemain": 0,
+            "inFamilyDeductTotal": 0,
+            "outFamilyDeductTotal": 0,
+            "inFamilyDeductRemain": 0,
+            "outFamilyDeductRemain": 0,
+            "inIndividMaxTotal": 0,
+            "outIndividMaxTotal": 0,
+            "inIndividMaxRemain": 0,
+            "outIndividMaxRemain": 0,
+            "inFamilyMaxTotal": 0,
+            "outFamilyMaxTotal": 0,
+            "inFamilyMaxRemain": 0,
+            "outFamilyMaxRemain": 0,
+            "incopay": 0,
+            "incopayOutpatient": 0,
+            "outcopay": 0,
+            "incoinsurance": 0,
+            "outcoinsurance": 0,
+            "tier1Deduct": 0,
+            "tier1FamilyDeduct": 0,
+            "tier1Remain": 0,
+            "tier1FamilyRemain": 0,
+            "tier1MaxDeduct": 0,
+            "tier1FamilyMaxDeduct": 0,
+            "tier1MaxRemain": 0,
+            "tier1FamilyMaxRemain": 0,
+            "tier1Copay": 0,
+            "tier1Coinsurance": 0
+        },
+        "notes": null,
+        "simpleOpeningsByFacIds": null
+    },
+    "rfaPhysicianFaxRequestType": "0",
+    "pr2PhysicianFaxRequestType": "0",
+    "pr2FaxDTO": null,
+    "rfaFaxDTO": null,
+    "imageDTO": null,
+    "partner": null,
+    "chosenFacilityId": null,
+    "appointmentStart": null,
+    "appointmentEnd": null,
+    "cancelReasons": null,
+    "cancelNotes": null,
+    "sendFaxToClaimsAdministrator": false,
+    "sendFaxToClaimsAdministratorCompany": false
+}
+```
+
+EXPLANATION
+
+### HTTP Request
+
+`POST https://provider-qa.strollhealth.com/api/addFaxRequest`
+
+### Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+faxRequestDTO | Object | A data transfer object that holds all the parameters
+
+
 ## getZipCoords
 
 ```shell
