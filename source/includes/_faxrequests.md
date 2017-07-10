@@ -100,7 +100,7 @@ curl --include \
 			    "practiceId": 3 } }"
 ```
 
-> 'http://localhost:9090/sh/faxrequests'
+> 'http://provider/sh/faxrequests'
 > The above command returns JSON structured like this:
 
 ```json
@@ -365,4 +365,4 @@ Finally, after these are done, it returns a response JSON object containing the 
 
 ### HTTP Request
 
-`POST http://localhost:9090/sh/faxrequests`
+`POST http://provider/sh/faxrequests`

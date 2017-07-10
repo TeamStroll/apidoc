@@ -30,7 +30,7 @@ curl 'https://provider.strollhealth.com/api/faxrequests'
   "items": [
     {
       "meta": {
-        "href": "http://localhost:9090/sh/pendingFaxRequests/3530",
+        "href": "http://provider/sh/pendingFaxRequests/3530",
         "mediaType": "application/vnd.sh-v1.0+json"
       },
       "id": 3530,
@@ -1148,16 +1148,16 @@ faxRequestDTO | Object | A data transfer object that holds all the parameters
 ## getZipCoords
 
 ```shell
-curl 'https://patient-dev.strollhealth.com/api/getZipCoords'
--H 'origin: https://patient-dev.strollhealth.com'
+curl 'https://findcare.strollhealth.com/api/getZipCoords'
+-H 'origin: https://findcare.strollhealth.com'
 -H 'accept-encoding: gzip, deflate, br'
 -H 'x-requested-with: XMLHttpRequest'
 -H 'accept-language: en-US,en;q=0.8'
 -H 'authorization: Basic bXktdHJ1c3RlZC1jbGllbnQxOg=='
 -H 'content-type: application/json'
 -H 'accept: application/json, text/javascript, */*; q=0.01'
--H 'referer: https://patient-dev.strollhealth.com/prescription_search'
--H 'authority: patient-dev.strollhealth.com'
+-H 'referer: https://findcare.strollhealth.com/prescription_search'
+-H 'authority: findcare.strollhealth.com'
 --data-binary '{"zipCode":"94109"}' --compressed
 ```
 
@@ -1186,16 +1186,16 @@ zipCode | String | Zip code for desired coordinates
 ## getSpecialists
 
 ```shell
-curl 'https://patient-dev.strollhealth.com/api/getSpecialists'
--H 'origin: https://patient-dev.strollhealth.com'
+curl 'https://findcare.strollhealth.com/api/getSpecialists'
+-H 'origin: https://findcare.strollhealth.com'
 -H 'accept-encoding: gzip, deflate, br'
 -H 'x-requested-with: XMLHttpRequest'
 -H 'accept-language: en-US,en;q=0.8'
 -H 'authorization: Basic bXktdHJ1c3RlZC1jbGllbnQxOg=='
 -H 'content-type: application/json'
 -H 'accept: application/json, text/javascript, */*; q=0.01'
--H 'referer: https://patient-dev.strollhealth.com/specialists'
--H 'authority: patient-dev.strollhealth.com'
+-H 'referer: https://findcare.strollhealth.com/specialists'
+-H 'authority: findcare.strollhealth.com'
 --data-binary
 '{"lat":41.409,"lng":-73.24263,"specialty":"cardiopulmonary-physical-therapist"
 ,"sort":"distance-asc"}'
@@ -1392,7 +1392,7 @@ specialty | String | Desired specialty
 ## getDrugList
 
 ```shell
-curl 'https://patient-dev.strollhealth.com/api/getDrugList'
+curl 'https://findcare.strollhealth.com/api/getDrugList'
 -H 'if-none-match: W/"1c095-VIDumywPrjdPlLwFZJSAr3BPbx8"'
 -H 'accept-encoding: gzip, deflate, sdch, br'
 -H 'x-requested-with: XMLHttpRequest'
@@ -1400,8 +1400,8 @@ curl 'https://patient-dev.strollhealth.com/api/getDrugList'
 -H 'authorization: Basic bXktdHJ1c3RlZC1jbGllbnQxOg=='
 -H 'content-type: application/json'
 -H 'accept: application/json, text/javascript, */*; q=0.01'
--H 'referer: https://patient-dev.strollhealth.com/'
--H 'authority: patient-dev.strollhealth.com' --compressed
+-H 'referer: https://findcare.strollhealth.com/'
+-H 'authority: findcare.strollhealth.com' --compressed
 ```
 
 > Example Response (First 3 entries)
@@ -1434,16 +1434,16 @@ This endpoint fetches the list of all drugs supported in Stroll's prescription p
 ## getDrugInfo
 
 ```shell
-curl 'https://patient-dev.strollhealth.com/api/getDrugInfo'
--H 'origin: https://patient-dev.strollhealth.com'
+curl 'https://findcare.strollhealth.com/api/getDrugInfo'
+-H 'origin: https://findcare.strollhealth.com'
 -H 'accept-encoding: gzip, deflate, br'
 -H 'x-requested-with: XMLHttpRequest'
 -H 'accept-language: en-US,en;q=0.8'
 -H 'authorization: Basic bXktdHJ1c3RlZC1jbGllbnQxOg=='
 -H 'content-type: application/json'
 -H 'accept: application/json, text/javascript, */*; q=0.01'
--H 'referer: https://patient-dev.strollhealth.com/prescription_search'
--H 'authority: patient-dev.strollhealth.com'
+-H 'referer: https://findcare.strollhealth.com/prescription_search'
+-H 'authority: findcare.strollhealth.com'
 --data-binary '{"name":"Accupril"}'
 --compressed
 ```
@@ -1498,7 +1498,7 @@ This serves as a wrapper for GoodRX API and returns quantities and dosages for a
 
 ### HTTP Request
 
-`POST https://patient-dev.strollhealth.com/api/getDrugInfo`
+`POST https://findcare.strollhealth.com/api/getDrugInfo`
 
 Parameter | Type | Description
 --------- | ------- | -----------
@@ -1508,15 +1508,15 @@ name | String | Name of the chosen drug
 ## fetchPlans
 
 ```shell
-curl 'https://patient-dev.strollhealth.com/api/getPlans'
+curl 'https://findcare.strollhealth.com/api/getPlans'
 -H 'if-none-match: W/"14111-TElwmDr+z6BVi7FGFMo1JX+CXCo"'
 -H 'accept-encoding: gzip, deflate, sdch, br'
 -H 'x-requested-with: XMLHttpRequest'
 -H 'accept-language: en-US,en;q=0.8'
 -H 'authorization: Basic bXktdHJ1c3RlZC1jbGllbnQxOg=='
 -H 'accept: application/json, text/javascript, */*; q=0.01'
--H 'referer: https://patient-dev.strollhealth.com/procedure_search'
--H 'authority: patient-dev.strollhealth.com'
+-H 'referer: https://findcare.strollhealth.com/procedure_search'
+-H 'authority: findcare.strollhealth.com'
 -H 'contenttype: application/json'
 --compressed
 ```
@@ -1568,4 +1568,4 @@ curl 'https://patient-dev.strollhealth.com/api/getPlans'
 
 This endpoint gets all the insurance plans.
 ### HTTP Request
-`GET https://patient-qa.strollhealth.com/api/getPlans`
+`GET https://findcare.strollhealth.com/api/getPlans`

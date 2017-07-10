@@ -68,7 +68,7 @@ You must replace <code>AUTH_TOKEN</code> with a user's authorization token.
 ```shell
 curl --include \
      --header "Authorization: Bearer AUTH_TOKEN" \
-  'http://localhost:9008/user/current'
+  'http://provider/user/current'
 ```
 
 > The above command returns JSON structured like this:
@@ -166,7 +166,7 @@ This endpoint retrieves information about the current user.
 
 ### HTTP Request
 
-`GET http://localhost:9008/user/current`
+`GET http://provider/user/current`
 
 <aside class="success">
 Remember — a happy user is an authenticated user!
@@ -177,7 +177,7 @@ Remember — a happy user is an authenticated user!
 ```shell
 curl --include \
      --header "Authorization: Bearer AUTH_TOKEN" \
-  'http://localhost:9008/user/sites'
+  'http://provider/user/sites'
 ```
 
 > The above command returns JSON structured like this:
@@ -436,14 +436,14 @@ This endpoint retrieves all sites belonging to the current user.
 
 ### HTTP Request
 
-`GET http://localhost:9008/user/sites`
+`GET http://provider/user/sites`
 
 ## Get Tenants by Email
 
 ```shell
 curl --include \
      --header "Authorization: Bearer AUTH_TOKEN" \
-  'http://localhost:9008/user/tenants?email=jamessmith@strollhealth.com'
+  'http://provider/user/tenants?email=jamessmith@strollhealth.com'
 ```
 
 > The above command returns JSON structured like this:
@@ -459,7 +459,7 @@ This endpoint retrieves tenants corresponding to an email.
 
 ### HTTP Request
 
-`GET http://localhost:9008/user/tenants?email={some_email}`
+`GET http://provider/user/tenants?email={some_email}`
 
 ### Parameters
 
@@ -473,7 +473,7 @@ email | String | An user email
 ```shell
 curl --include \
      --header "Authorization: Bearer AUTH_TOKEN" \
-  'http://localhost:9008/user/24/profile/signature'
+  'http://provider/user/24/profile/signature'
 ```
 
 > The above command returns JSON structured like this:
@@ -491,7 +491,7 @@ This endpoint retrieves the an user's signature.
 
 ### HTTP Request
 
-`GET http://localhost:9008/user/{userId}/profile/signature`
+`GET http://provider/user/{userId}/profile/signature`
 
 ### Parameters
 
@@ -505,7 +505,7 @@ userId | String | A user id for which you want to retrieve the signature
 ```shell
 curl --include \
      --header "Authorization: Bearer AUTH_TOKEN" \
-  'http://localhost:9008/user/facility/some_facility/users'
+  'http://provider/user/facility/some_facility/users'
 ```
 
 
@@ -613,7 +613,7 @@ This endpoint retrieves all users corresponding to a facility.
 
 ### HTTP Request
 
-`GET http://localhost:9008/user/facility/{facility_name}/users`
+`GET http://provider/user/facility/{facility_name}/users`
 
 ### Parameters
 
@@ -627,7 +627,7 @@ facility_name | String | Name of the facility for which you wish to retrieve use
 ```shell
 curl --include \
      --header "Authorization: Bearer AUTH_TOKEN" \
-  'http://localhost:9008/user/tenants?email=jamessmith@strollhealth.com'
+  'http://provider/user/tenants?email=jamessmith@strollhealth.com'
 ```
 
 > The above command returns JSON structured like this:
@@ -643,7 +643,7 @@ This endpoint retrieves tenants corresponding to an email.
 
 ### HTTP Request
 
-`GET http://localhost:9008/user/tenants?email={some_email}`
+`GET http://provider/user/tenants?email={some_email}`
 
 ### Parameters
 
