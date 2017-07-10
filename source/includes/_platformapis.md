@@ -1430,6 +1430,80 @@ This endpoint fetches the list of all drugs supported in Stroll's prescription p
 ### HTTP Request
 `GET https://findcare.strollhealth.com/api/getDrugList`
 
+## getDrugInfo
+
+```shell
+curl 'https://patient-dev.strollhealth.com/api/getDrugInfo'
+-H 'origin: https://patient-dev.strollhealth.com'
+-H 'accept-encoding: gzip, deflate, br'
+-H 'x-requested-with: XMLHttpRequest'
+-H 'accept-language: en-US,en;q=0.8'
+-H 'authorization: Basic bXktdHJ1c3RlZC1jbGllbnQxOg=='
+-H 'content-type: application/json'
+-H 'accept: application/json, text/javascript, */*; q=0.01'
+-H 'referer: https://patient-dev.strollhealth.com/prescription_search'
+-H 'authority: patient-dev.strollhealth.com'
+--data-binary '{"name":"Accupril"}'
+--compressed
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "errors": [],
+    "data": {
+        "drugs": {
+            "tablet": {
+                "5mg": "https://www.goodrx.com/accupril?grx_ref=api&strength=5mg&form=tablet&label=Accupril",
+                "10mg": "https://www.goodrx.com/accupril?grx_ref=api&strength=10mg&form=tablet&label=Accupril",
+                "20mg": "https://www.goodrx.com/accupril?grx_ref=api&strength=20mg&form=tablet&label=Accupril",
+                "40mg": "https://www.goodrx.com/accupril?grx_ref=api&strength=40mg&form=tablet&label=Accupril"
+            }
+        },
+        "quantities": {
+            "tablet": {
+                "5mg": [
+                    30
+                ],
+                "10mg": [
+                    30,
+                    60,
+                    90
+                ],
+                "20mg": [
+                    15,
+                    30,
+                    60,
+                    90,
+                    180
+                ],
+                "40mg": [
+                    30,
+                    45,
+                    60,
+                    90,
+                    180
+                ]
+            }
+        }
+    },
+    "success": true
+}
+```
+
+This serves as a wrapper for GoodRX API and returns quantities and dosages for a given drug.
+
+
+### HTTP Request
+
+`POST https://patient-dev.strollhealth.com/api/getDrugInfo`
+
+Parameter | Type | Description
+--------- | ------- | -----------
+name | String | Name of the chosen drug
+
+
 ## fetchPlans
 
 ```shell
@@ -1494,3 +1568,6 @@ curl 'https://patient-dev.strollhealth.com/api/getPlans'
 This endpoint gets all the insurance plans.
 ### HTTP Request
 `GET https://patient-qa.strollhealth.com/api/getPlans`
+
+
+
