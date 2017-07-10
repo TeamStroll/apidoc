@@ -427,7 +427,7 @@ Parameter | Type | Description
 patientId | Number | ID corresponding to the patient
 userId | Number | ID corresponding to the provider
 cptCodeIds | Number | CPT code for the procedure
-pricingException | String | ???
+pricingException | String | Pricing exception code.
 bilateral | Number | 1 if the procedure is bilateral, 0 otherwise
 
 ## getClinicalIndicationSuggestion
@@ -613,7 +613,7 @@ bilateral | Number | Indicates whether the procedure is bilateral. 1 if True, 0 
 cptCodeIds | Number | CPT Code identifying the type of procedure.
 facilityIds | Number array | IDs corresponding to the user's associated facilities.
 patientId | Number | Unique ID corresponding to patient.
-pricingException | String ? | ??
+pricingException | String | Pricing exception code.
 userId | Number | Unique ID corresponding to user.
 
 ## getEquipment
@@ -832,7 +832,7 @@ Zip Code | String | User's zip code.
 Payer Id | Number | Unique Id corresponding to the payer.
 Plan Id | String | Unique Id corresponding to the plan.
 Pricing Exception | String | If needed with CPT code, this indicates what possible pricing exceptions are included.
-Quantity | Number | ??
+Quantity | Number | Number of procedures.
 
 ## orderFax
 
@@ -1568,6 +1568,3 @@ curl 'https://patient-dev.strollhealth.com/api/getPlans'
 This endpoint gets all the insurance plans.
 ### HTTP Request
 `GET https://patient-qa.strollhealth.com/api/getPlans`
-
-
-
