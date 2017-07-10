@@ -48,34 +48,32 @@ appointment Parameter | Type | Description
 ## faxDTO
 faxDTO Parameter | Type | Description
 --------- | ------- | -----------
-ICD9_code | String |
-ICD10_code | String |
 cash_alert | String | Indicates if the patient is paying with cash
-cell_checkbox | Boolean |
-claustrophobic_checkbox | Boolean |
+cell_checkbox | Boolean | 
+claustrophobic_checkbox | Boolean | Indicates if the patient is claustrophobic
 clinical_indication | String |
 comparison_study_checkbox | Boolean |
 courier_films_checkbox | Boolean |
 courier_films_to_address | String |
 courier_films_to_name | String |
-cpt_code | String |
+cpt_code | String | CPT code for the procedure
 creatinine | String |
 creatinine_date | String |
-diabetes_checkbox | Boolean |
+diabetes_checkbox | Boolean | Indicates if the patient has diabetes
 dob | String |
 estimate_out_of_pocket_cost | String |
 facility_address_1 | String |
 facility_address_2 | String |
 facility_address_3 | String |
-facility_fax | String |
-facility_name | String |
+facility_fax | String | 
+facility_name | String | 
 facility_phone | String |
 fax_STAT_checkbox | Boolean |
 fax_written_report_checkbox | Boolean |
 female_checkbox | Boolean |
-home_checkbox | Boolean |
-icd9_code | String |
-icd10_code | String |
+home_checkbox | Boolean | 
+icd9_code | String | ICD-9-CM medical diagnosis code
+icd10_code | String | ICD-10-CM medical diagnosis code
 insurance_carrier | String |
 iv_contrast_allergy_checkbox | Boolean |
 iv_contrast_allergy_description | String |
@@ -125,3 +123,5 @@ special_instructions | String |
 symptom_onset_date | String |
 taking_metformin_checkbox | Boolean |
 userId | Number |
+
+
