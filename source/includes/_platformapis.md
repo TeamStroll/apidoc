@@ -428,7 +428,8 @@ patientId | Number | ID corresponding to the patient
 userId | Number | ID corresponding to the provider
 cptCodeIds | Number | CPT code for the procedure
 pricingException | String | Pricing exception code.
-bilateral | Number | 1 if the procedure is bilateral, 0 otherwise
+bilateral | Number | 1 if the procedure is bilateral, 0 otherwise.
+quantity | Number | Number of procedures.
 
 ## getClinicalIndicationSuggestion
 
