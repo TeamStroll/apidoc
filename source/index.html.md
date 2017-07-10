@@ -24,24 +24,38 @@ Welcome to the Stroll Health API!
 
 
 # Authentication
-
 > To authorize, use this code:
 
 ```shell
-require 'stroll'
-
-api = Stroll::APIClient.authorize!('AUTH_TOKEN')
+curl 'https://provider-qa.strollhealth.com/oauth/token'
+-H 'origin: https://provider-qa.strollhealth.com'
+-H 'accept-encoding: gzip, deflate, br'
+-H 'x-requested-with: XMLHttpRequest'
+-H 'accept-language: en-US,en;q=0.8'
+-H 'authorization: Basic bXktdHJ1c3RlZC1jbGllbnQxOg=='
+-H 'content-type: application/x-www-form-urlencoded'
+-H 'accept: application/json, text/javascript, */*; q=0.01'
+-H 'referer: https://provider-qa.strollhealth.com/'
+-H 'authority: provider-qa.strollhealth.com'
+--data 'grant_type=password&username=sh:jamessmith@strollhealth.com&password=Strollh3alth!' --compressed
 ```
 
+> The above command returns JSON structured like this:
 
-
-> Make sure to replace `AUTH_TOKEN` with your API key.
+```json
+{
+    "access_token": "AUTH_TOKEN",
+    "token_type": "bearer",
+    "refresh_token": "AUTH_TOKEN",
+    "expires_in": 86399,
+    "scope": "read write trust",
+    "jti": "6d5f9a5e-e6ef-4200-af38-eafd7f513718"
+}
+```
 
 Stroll uses OAuth2 to allow access to the API.
-
 Stroll expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: AUTH_TOKEN`
+`Authorization: bearer AUTH_TOKEN`
 
 <aside class="notice">
 You must replace <code>AUTH_TOKEN</code> with a user's authorization token.
