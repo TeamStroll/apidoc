@@ -24,20 +24,29 @@ Welcome to the Stroll Health API!
 
 
 # Authentication
-
 > To authorize, use this code:
 
 ```shell
+<<<<<<< HEAD
 curl 'https://provider-qa.strollhealth.com/oauth/token'
 -H 'origin: https://provider-qa.strollhealth.com'
+=======
+curl 'https://provider.strollhealth.com/oauth/token'
+-H 'origin: https://provider.strollhealth.com'
+>>>>>>> aa7cc53229d14d5c15d341d2341b05ee86d59ef1
 -H 'accept-encoding: gzip, deflate, br'
 -H 'x-requested-with: XMLHttpRequest'
 -H 'accept-language: en-US,en;q=0.8'
 -H 'authorization: Basic bXktdHJ1c3RlZC1jbGllbnQxOg=='
 -H 'content-type: application/x-www-form-urlencoded'
 -H 'accept: application/json, text/javascript, */*; q=0.01'
+<<<<<<< HEAD
 -H 'referer: https://provider-qa.strollhealth.com/'
 -H 'authority: provider-qa.strollhealth.com'
+=======
+-H 'referer: https://provider.strollhealth.com/'
+-H 'authority: provider.strollhealth.com'
+>>>>>>> aa7cc53229d14d5c15d341d2341b05ee86d59ef1
 --data 'grant_type=password&username=sh:jamessmith@strollhealth.com&password=Strollh3alth!' --compressed
 ```
 
@@ -55,7 +64,6 @@ curl 'https://provider-qa.strollhealth.com/oauth/token'
 ```
 
 Stroll uses OAuth2 to allow access to the API.
-
 Stroll expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
 `Authorization: bearer AUTH_TOKEN`
@@ -71,7 +79,7 @@ You must replace <code>AUTH_TOKEN</code> with a user's authorization token.
 ```shell
 curl --include \
      --header "Authorization: Bearer AUTH_TOKEN" \
-  'http://localhost:9008/user/current'
+  'http://provider/user/current'
 ```
 
 > The above command returns JSON structured like this:
@@ -167,7 +175,11 @@ curl --include \
 
 ### HTTP Request
 
+<<<<<<< HEAD
 `POST http://provider.strollhealth/api/addFaxRequest`
+=======
+`GET http://provider/user/current`
+>>>>>>> aa7cc53229d14d5c15d341d2341b05ee86d59ef1
 
 <aside class="success">
 Remember — a happy user is an authenticated user!
@@ -178,7 +190,7 @@ Remember — a happy user is an authenticated user!
 ```shell
 curl --include \
      --header "Authorization: Bearer AUTH_TOKEN" \
-  'http://localhost:9008/user/sites'
+  'http://provider/user/sites'
 ```
 
 > The above command returns JSON structured like this:
@@ -437,14 +449,14 @@ This endpoint retrieves all sites belonging to the current user.
 
 ### HTTP Request
 
-`GET http://localhost:9008/user/sites`
+`GET http://provider/user/sites`
 
 ## Get Tenants by Email
 
 ```shell
 curl --include \
      --header "Authorization: Bearer AUTH_TOKEN" \
-  'http://localhost:9008/user/tenants?email=jamessmith@strollhealth.com'
+  'http://provider/user/tenants?email=jamessmith@strollhealth.com'
 ```
 
 > The above command returns JSON structured like this:
@@ -460,7 +472,7 @@ This endpoint retrieves tenants corresponding to an email.
 
 ### HTTP Request
 
-`GET http://localhost:9008/user/tenants?email={some_email}`
+`GET http://provider/user/tenants?email={some_email}`
 
 ### Parameters
 
@@ -474,7 +486,7 @@ email | String | An user email
 ```shell
 curl --include \
      --header "Authorization: Bearer AUTH_TOKEN" \
-  'http://localhost:9008/user/24/profile/signature'
+  'http://provider/user/24/profile/signature'
 ```
 
 > The above command returns JSON structured like this:
@@ -492,7 +504,7 @@ This endpoint retrieves the an user's signature.
 
 ### HTTP Request
 
-`GET http://localhost:9008/user/{userId}/profile/signature`
+`GET http://provider/user/{userId}/profile/signature`
 
 ### Parameters
 
@@ -506,7 +518,7 @@ userId | String | A user id for which you want to retrieve the signature
 ```shell
 curl --include \
      --header "Authorization: Bearer AUTH_TOKEN" \
-  'http://localhost:9008/user/facility/some_facility/users'
+  'http://provider/user/facility/some_facility/users'
 ```
 
 
@@ -614,7 +626,7 @@ This endpoint retrieves all users corresponding to a facility.
 
 ### HTTP Request
 
-`GET http://localhost:9008/user/facility/{facility_name}/users`
+`GET http://provider/user/facility/{facility_name}/users`
 
 ### Parameters
 
@@ -628,7 +640,7 @@ facility_name | String | Name of the facility for which you wish to retrieve use
 ```shell
 curl --include \
      --header "Authorization: Bearer AUTH_TOKEN" \
-  'http://localhost:9008/user/tenants?email=jamessmith@strollhealth.com'
+  'http://provider/user/tenants?email=jamessmith@strollhealth.com'
 ```
 
 > The above command returns JSON structured like this:
@@ -644,7 +656,7 @@ This endpoint retrieves tenants corresponding to an email.
 
 ### HTTP Request
 
-`GET http://localhost:9008/user/tenants?email={some_email}`
+`GET http://provider/user/tenants?email={some_email}`
 
 ### Parameters
 

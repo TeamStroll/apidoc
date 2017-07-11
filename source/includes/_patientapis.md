@@ -3,16 +3,16 @@
 ## submitPatientData
 
 ```shell
-curl 'https://patient-qa.strollhealth.com/api/register'
--H 'origin: https://patient-dev.strollhealth.com'
+curl 'https://findcare.strollhealth.com/api/register'
+-H 'origin: https://findcare.strollhealth.com'
 -H 'accept-encoding: gzip, deflate, br'
 -H 'x-requested-with: XMLHttpRequest'
 -H 'accept-language: en-US,en;q=0.8'
 -H 'authorization: Bearer AUTH_TOKEN'
 -H 'content-type: application/json'
 -H 'accept: application/json, text/javascript, */*; q=0.01'
--H 'referer: https://patient-dev.strollhealth.com/add_patient'
--H 'authority: patient-dev.strollhealth.com'
+-H 'referer: https://findcare.strollhealth.com/add_patient'
+-H 'authority: findcare.strollhealth.com'
 --data-binary '{"acceptTerms":true,"firstName":"Allison","gender":"F",
 "lastName":"Liao","paymentMethod":"cash","paymentObject":{"pi":1,"mi":"",
 "payerName":"Cash-Pay"},"phoneNumber":"(893) 707-4032","zip":"94704",
@@ -56,7 +56,7 @@ curl 'https://patient-qa.strollhealth.com/api/register'
 This endpoint posts new user info to the database.
 
 ### HTTP Request
-`POST https://patient-dev.strollhealth.com/api/register`
+`POST https://findcare.strollhealth.com/api/register`
 ### Parameters
 
 Parameter | Type | Description

@@ -3,15 +3,15 @@
 ## getFaxRequest
 
 ```shell
-curl 'https://provider-dev.strollhealth.com/api/faxrequests'
--H 'origin: https://provider-dev.strollhealth.com'
+curl 'https://provider.strollhealth.com/api/faxrequests'
+-H 'origin: https://provider.strollhealth.com'
 -H 'accept-encoding: gzip, deflate, br'
 -H 'x-requested-with: XMLHttpRequest'
 -H 'accept-language: en-US,en;q=0.8'
 -H 'authorization: Bearer AUTH_TOKEN'
 -H 'accept: application/json, text/plain, */*'
--H 'referer: https://provider-dev.strollhealth.com/radiology_orders/overview'
--H 'authority: provider-dev.strollhealth.com'
+-H 'referer: https://provider.strollhealth.com/radiology_orders/overview'
+-H 'authority: provider.strollhealth.com'
 --data-binary '{"startDate":"04-07-2017","endDate":"08-07-2017",
 "facilityIds":[456,454],"limit":40,"page":0,"userId":2}'
 --compressed
@@ -30,7 +30,7 @@ curl 'https://provider-dev.strollhealth.com/api/faxrequests'
   "items": [
     {
       "meta": {
-        "href": "http://localhost:9090/sh/pendingFaxRequests/3530",
+        "href": "http://provider/sh/pendingFaxRequests/3530",
         "mediaType": "application/vnd.sh-v1.0+json"
       },
       "id": 3530,
@@ -305,16 +305,16 @@ userId | Number | Unique ID corresponding to user.
 
 ## getFacilities
 ```shell
-curl 'https://provider-qa.strollhealth.com/api/search'
--H 'origin: https://provider-qa.strollhealth.com'
+curl 'https://provider.strollhealth.com/api/search'
+-H 'origin: https://provider.strollhealth.com'
 -H 'accept-encoding: gzip, deflate, br'
 -H 'x-requested-with: XMLHttpRequest'
 -H 'accept-language: en-US,en;q=0.8'
 -H 'authorization: Bearer AUTH_TOKEN'
 -H 'content-type: application/json'
 -H 'accept: application/json, text/javascript, */*; q=0.01'
--H 'referer: https://provider-qa.strollhealth.com/provider_dashboard/results'
--H 'authority: provider-qa.strollhealth.com'
+-H 'referer: https://provider.strollhealth.com/provider_dashboard/results'
+-H 'authority: provider.strollhealth.com'
 --data-binary '{"patientId":5531,"userId":1,"cptCodeIds":73701,
 "pricingException":"undefined","bilateral":1}'
 --compressed
@@ -336,7 +336,7 @@ curl 'https://provider-qa.strollhealth.com/api/search'
             "fromAddress": null,
             "facility": "PAMF - San Carlos Radiology Center",
             "address": "301 Industrial Rd, Level 1, San Carlos, CA 94070",
-            "image": "https://provider-qa.strollhealth.com/sh/images/generic_facility_image.png",
+            "image": "https://provider.strollhealth.com/sh/images/generic_facility_image.png",
             "distance": "24.8 mi",
             "phone": "548",
             "fax": "824",
@@ -363,7 +363,7 @@ curl 'https://provider-qa.strollhealth.com/api/search'
             "fromAddress": null,
             "facility": "Inview Imaging Fremont",
             "address": "39465 Paseo Padre Parkway, Suite 1000, Fremont, CA 94538",
-            "image": "https://provider-qa.strollhealth.com/sh/images/526_Inview%20Imaging%20Center.png",
+            "image": "https://provider.strollhealth.com/sh/images/526_Inview%20Imaging%20Center.png",
             "distance": "26.8 mi",
             "phone": "197",
             "fax": "198",
@@ -419,7 +419,7 @@ curl 'https://provider-qa.strollhealth.com/api/search'
 This endpoint retrieves facilities corresponding to a user and CPT code.
 
 ### HTTP Request
-`POST https://provider-qa.strollhealth.com/api/search`
+`POST https://provider.strollhealth.com/api/search`
 ### Parameters
 
 Parameter | Type | Description
@@ -427,22 +427,23 @@ Parameter | Type | Description
 patientId | Number | ID corresponding to the patient
 userId | Number | ID corresponding to the provider
 cptCodeIds | Number | CPT code for the procedure
-pricingException | String | ???
-bilateral | Number | 1 if the procedure is bilateral, 0 otherwise
+pricingException | String | Pricing exception code.
+bilateral | Number | 1 if the procedure is bilateral, 0 otherwise.
+quantity | Number | Number of procedures.
 
 ## getClinicalIndicationSuggestion
 
 ```shell
-curl 'https://provider-dev.strollhealth.com/api/getClinicalIndication'
--H 'origin: https://provider-dev.strollhealth.com'
+curl 'https://provider.strollhealth.com/api/getClinicalIndication'
+-H 'origin: https://provider.strollhealth.com'
 -H 'accept-encoding: gzip, deflate, br'
 -H 'x-requested-with: XMLHttpRequest'
 -H 'accept-language: en-US,en;q=0.8'
 -H 'authorization: Bearer AUTH_TOKEN'
 -H 'content-type: application/json'
 -H 'accept: application/json, text/javascript, */*; q=0.01'
--H 'referer: https://provider-dev.strollhealth.com/provider_dashboard/finalize_order'
--H 'authority: provider-dev.strollhealth.com'  
+-H 'referer: https://provider.strollhealth.com/provider_dashboard/finalize_order'
+-H 'authority: provider.strollhealth.com'  
 --data-binary '{"substring":"bas","limit":5}'
 --compressed
 ```
@@ -504,7 +505,7 @@ This endpoint retrieves a list of clinical indications that contain the substrin
 
 ### HTTP Request
 
-`POST https://provider-dev.strollhealth.com/api/getClinicalIndication`
+`POST https://provider.strollhealth.com/api/getClinicalIndication`
 
 ### Parameters
 
@@ -516,16 +517,16 @@ Limit | Number | The number of results shown.
 ## getRadiologyFacilities
 
 ```shell
-curl 'https://provider-dev.strollhealth.com/api/radiology/prices'
--H 'origin: https://provider-dev.strollhealth.com'
+curl 'https://provider.strollhealth.com/api/radiology/prices'
+-H 'origin: https://provider.strollhealth.com'
 -H 'accept-encoding: gzip, deflate, br'
 -H 'x-requested-with: XMLHttpRequest'
 -H 'accept-language: en-US,en;q=0.8'
 -H 'authorization: Bearer AUTH_TOKEN'
 -H 'content-type: application/json'
 -H 'accept: application/json, text/javascript, */*; q=0.01'
--H 'referer: https://provider-dev.strollhealth.com/radiology_dashboard/results'
--H 'authority: provider-dev.strollhealth.com'
+-H 'referer: https://provider.strollhealth.com/radiology_dashboard/results'
+-H 'authority: provider.strollhealth.com'
 --data-binary '{"patientId":7461,"userId":2,"cptCodeIds":77012,
 "pricingException":"undefined","bilateral":"undefined","facilityIds":[456,454]}'
 --compressed
@@ -548,7 +549,7 @@ curl 'https://provider-dev.strollhealth.com/api/radiology/prices'
       "fromAddress": null,
       "facility": "Northern California Pet Imaging",
       "address": "3195 Folsom Boulevard, Sacramento, CA 95816",
-      "image": "https://provider-dev.strollhealth.com/sh/images/454_Northern%20California%20Pet%20Imaging.png.jpg",
+      "image": "https://provider.strollhealth.com/sh/images/454_Northern%20California%20Pet%20Imaging.png.jpg",
       "distance": "74.5 mi",
       "phone": "4864",
       "fax": "9167376203",
@@ -575,7 +576,7 @@ curl 'https://provider-dev.strollhealth.com/api/radiology/prices'
       "fromAddress": null,
       "facility": "Norcal Imaging Oakland",
       "address": "3200 Telegraph Avenue, Oakland, CA 94609",
-      "image": "https://provider-dev.strollhealth.com/sh/images/456_Norcal%20Imaging%20Oakland.png",
+      "image": "https://provider.strollhealth.com/sh/images/456_Norcal%20Imaging%20Oakland.png",
       "distance": "8.7 mi",
       "phone": "3123",
       "fax": "5106631951",
@@ -613,21 +614,21 @@ bilateral | Number | Indicates whether the procedure is bilateral. 1 if True, 0 
 cptCodeIds | Number | CPT Code identifying the type of procedure.
 facilityIds | Number array | IDs corresponding to the user's associated facilities.
 patientId | Number | Unique ID corresponding to patient.
-pricingException | String ? | ??
+pricingException | String | Pricing exception code.
 userId | Number | Unique ID corresponding to user.
 
 ## getEquipment
 
 ```shell
-curl 'https://provider-qa.strollhealth.com/api/getEquipment'
--H 'origin: https://provider-qa.strollhealth.com'
+curl 'https://provider.strollhealth.com/api/getEquipment'
+-H 'origin: https://provider.strollhealth.com'
 -H 'accept-encoding: gzip, deflate, br'
 -H 'x-requested-with: XMLHttpRequest' -H 'accept-language: en-US,en;q=0.8'
 -H 'authorization: Bearer AUTH_TOKEN'
 -H 'content-type: application/json'
 -H 'accept: application/json, text/javascript, */*; q=0.01'
--H 'referer: https://provider-qa.strollhealth.com/radiology_dashboard/schedule'
--H 'authority: provider-qa.strollhealth.com'
+-H 'referer: https://provider.strollhealth.com/radiology_dashboard/schedule'
+-H 'authority: provider.strollhealth.com'
 --data-binary '{"facilityId":10018}'
 --compressed
 
@@ -750,7 +751,7 @@ curl 'http://localhost:9080/api/getSimplePrices'
             "fromAddress": null,
             "facility": "Pamf - San Carlos Radiology Center",
             "address": "301 Industrial Rd, Level 1, San Carlos, CA 94070",
-            "image": "https://provider-dev.strollhealth.com/sh/images/generic_facility_image.png",
+            "image": "https://provider.strollhealth.com/sh/images/generic_facility_image.png",
             "distance": "24.8 mi",
             "phone": "5426",
             "fax": "6505517039",
@@ -832,21 +833,21 @@ Zip Code | String | User's zip code.
 Payer Id | Number | Unique Id corresponding to the payer.
 Plan Id | String | Unique Id corresponding to the plan.
 Pricing Exception | String | If needed with CPT code, this indicates what possible pricing exceptions are included.
-Quantity | Number | ??
+Quantity | Number | Number of procedures.
 
 ## orderFax
 
 ```shell
-curl 'https://provider-qa.strollhealth.com/api/addFaxRequest'
--H 'origin: https://provider-qa.strollhealth.com'
+curl 'https://provider.strollhealth.com/api/addFaxRequest'
+-H 'origin: https://provider.strollhealth.com'
 -H 'accept-encoding: gzip, deflate, br'
 -H 'x-requested-with: XMLHttpRequest'
 -H 'accept-language: en-US,en;q=0.8'
 -H 'authorization: Bearer AUTH_TOKEN'
 -H 'content-type: application/json'
 -H 'accept: application/json, text/plain, */*'
--H 'referer: https://provider-qa.strollhealth.com/provider_dashboard/finalize_order'
--H 'authority: provider-qa.strollhealth.com'
+-H 'referer: https://provider.strollhealth.com/provider_dashboard/finalize_order'
+-H 'authority: provider.strollhealth.com'
 --data-binary'{"sendFaxToFacility":true,"currentFacilityId":0,
 "createDateAsString":"2017-07-07","chosenFacilityId":10018,
 "patientEmail":"TunjiAli@strollhealth.com","cptCode":"73564",
@@ -1131,11 +1132,11 @@ curl 'https://provider-qa.strollhealth.com/api/addFaxRequest'
 }
 ```
 
-EXPLANATION
+Send fax order with specified fields.
 
 ### HTTP Request
 
-`POST https://provider-qa.strollhealth.com/api/addFaxRequest`
+`POST https://provider.strollhealth.com/api/addFaxRequest`
 
 ### Parameters
 
@@ -1147,16 +1148,16 @@ faxRequestDTO | Object | A data transfer object that holds all the parameters
 ## getZipCoords
 
 ```shell
-curl 'https://patient-dev.strollhealth.com/api/getZipCoords'
--H 'origin: https://patient-dev.strollhealth.com'
+curl 'https://findcare.strollhealth.com/api/getZipCoords'
+-H 'origin: https://findcare.strollhealth.com'
 -H 'accept-encoding: gzip, deflate, br'
 -H 'x-requested-with: XMLHttpRequest'
 -H 'accept-language: en-US,en;q=0.8'
 -H 'authorization: Basic bXktdHJ1c3RlZC1jbGllbnQxOg=='
 -H 'content-type: application/json'
 -H 'accept: application/json, text/javascript, */*; q=0.01'
--H 'referer: https://patient-dev.strollhealth.com/prescription_search'
--H 'authority: patient-dev.strollhealth.com'
+-H 'referer: https://findcare.strollhealth.com/prescription_search'
+-H 'authority: findcare.strollhealth.com'
 --data-binary '{"zipCode":"94109"}' --compressed
 ```
 
@@ -1185,16 +1186,16 @@ zipCode | String | Zip code for desired coordinates
 ## getSpecialists
 
 ```shell
-curl 'https://patient-dev.strollhealth.com/api/getSpecialists'
--H 'origin: https://patient-dev.strollhealth.com'
+curl 'https://findcare.strollhealth.com/api/getSpecialists'
+-H 'origin: https://findcare.strollhealth.com'
 -H 'accept-encoding: gzip, deflate, br'
 -H 'x-requested-with: XMLHttpRequest'
 -H 'accept-language: en-US,en;q=0.8'
 -H 'authorization: Basic bXktdHJ1c3RlZC1jbGllbnQxOg=='
 -H 'content-type: application/json'
 -H 'accept: application/json, text/javascript, */*; q=0.01'
--H 'referer: https://patient-dev.strollhealth.com/specialists'
--H 'authority: patient-dev.strollhealth.com'
+-H 'referer: https://findcare.strollhealth.com/specialists'
+-H 'authority: findcare.strollhealth.com'
 --data-binary
 '{"lat":41.409,"lng":-73.24263,"specialty":"cardiopulmonary-physical-therapist"
 ,"sort":"distance-asc"}'
@@ -1391,7 +1392,7 @@ specialty | String | Desired specialty
 ## getDrugList
 
 ```shell
-curl 'https://patient-dev.strollhealth.com/api/getDrugList'
+curl 'https://findcare.strollhealth.com/api/getDrugList'
 -H 'if-none-match: W/"1c095-VIDumywPrjdPlLwFZJSAr3BPbx8"'
 -H 'accept-encoding: gzip, deflate, sdch, br'
 -H 'x-requested-with: XMLHttpRequest'
@@ -1399,8 +1400,8 @@ curl 'https://patient-dev.strollhealth.com/api/getDrugList'
 -H 'authorization: Basic bXktdHJ1c3RlZC1jbGllbnQxOg=='
 -H 'content-type: application/json'
 -H 'accept: application/json, text/javascript, */*; q=0.01'
--H 'referer: https://patient-dev.strollhealth.com/'
--H 'authority: patient-dev.strollhealth.com' --compressed
+-H 'referer: https://findcare.strollhealth.com/'
+-H 'authority: findcare.strollhealth.com' --compressed
 ```
 
 > Example Response (First 3 entries)
@@ -1433,16 +1434,16 @@ This endpoint fetches the list of all drugs supported in Stroll's prescription p
 ## getDrugInfo
 
 ```shell
-curl 'https://patient-dev.strollhealth.com/api/getDrugInfo'
--H 'origin: https://patient-dev.strollhealth.com'
+curl 'https://findcare.strollhealth.com/api/getDrugInfo'
+-H 'origin: https://findcare.strollhealth.com'
 -H 'accept-encoding: gzip, deflate, br'
 -H 'x-requested-with: XMLHttpRequest'
 -H 'accept-language: en-US,en;q=0.8'
 -H 'authorization: Basic bXktdHJ1c3RlZC1jbGllbnQxOg=='
 -H 'content-type: application/json'
 -H 'accept: application/json, text/javascript, */*; q=0.01'
--H 'referer: https://patient-dev.strollhealth.com/prescription_search'
--H 'authority: patient-dev.strollhealth.com'
+-H 'referer: https://findcare.strollhealth.com/prescription_search'
+-H 'authority: findcare.strollhealth.com'
 --data-binary '{"name":"Accupril"}'
 --compressed
 ```
@@ -1497,7 +1498,7 @@ This serves as a wrapper for GoodRX API and returns quantities and dosages for a
 
 ### HTTP Request
 
-`POST https://patient-dev.strollhealth.com/api/getDrugInfo`
+`POST https://findcare.strollhealth.com/api/getDrugInfo`
 
 Parameter | Type | Description
 --------- | ------- | -----------
@@ -1507,15 +1508,15 @@ name | String | Name of the chosen drug
 ## fetchPlans
 
 ```shell
-curl 'https://patient-dev.strollhealth.com/api/getPlans'
+curl 'https://findcare.strollhealth.com/api/getPlans'
 -H 'if-none-match: W/"14111-TElwmDr+z6BVi7FGFMo1JX+CXCo"'
 -H 'accept-encoding: gzip, deflate, sdch, br'
 -H 'x-requested-with: XMLHttpRequest'
 -H 'accept-language: en-US,en;q=0.8'
 -H 'authorization: Basic bXktdHJ1c3RlZC1jbGllbnQxOg=='
 -H 'accept: application/json, text/javascript, */*; q=0.01'
--H 'referer: https://patient-dev.strollhealth.com/procedure_search'
--H 'authority: patient-dev.strollhealth.com'
+-H 'referer: https://findcare.strollhealth.com/procedure_search'
+-H 'authority: findcare.strollhealth.com'
 -H 'contenttype: application/json'
 --compressed
 ```
@@ -1567,7 +1568,4 @@ curl 'https://patient-dev.strollhealth.com/api/getPlans'
 
 This endpoint gets all the insurance plans.
 ### HTTP Request
-`GET https://patient-qa.strollhealth.com/api/getPlans`
-
-
-
+`GET https://findcare.strollhealth.com/api/getPlans`
