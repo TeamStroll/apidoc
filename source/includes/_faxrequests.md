@@ -100,7 +100,7 @@ curl --include \
 			    "practiceId": 3 } }"
 ```
 
-> 'http://provider/sh/faxrequests'
+> 'http://provider.strollhealth.com/sh/faxrequests'
 > The above command returns JSON structured like this:
 
 ```json
@@ -365,4 +365,4 @@ Finally, after these are done, it returns a response JSON object containing the 
 
 ### HTTP Request
 
-`POST http://provider/sh/faxrequests`
+`POST http://provider.strollhealth.com/sh/faxrequests`

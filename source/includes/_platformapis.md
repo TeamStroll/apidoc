@@ -30,7 +30,7 @@ curl 'https://provider.strollhealth.com/api/faxrequests'
   "items": [
     {
       "meta": {
-        "href": "http://provider/sh/pendingFaxRequests/3530",
+        "href": "http://provider.strollhealth.com/sh/pendingFaxRequests/3530",
         "mediaType": "application/vnd.sh-v1.0+json"
       },
       "id": 3530,
